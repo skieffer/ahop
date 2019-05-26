@@ -1,0 +1,14 @@
+# Backup files
+*~
+~$*
+
+# vim swap files
+*.swp
+*.swo
+
+# mac junk
+*.DS_Store
+
+# PyCharm IDE junk
+.idea
+

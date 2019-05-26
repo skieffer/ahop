@@ -1,0 +1,112 @@
+###############################################################################
+# This module belongs to Steve Kieffer's *MathNotes* Library.
+# It is licensed under the Creative Commons Attribution-ShareAlike 4.0
+# International License (CC BY-SA 4.0):
+#   https://creativecommons.org/licenses/by-sa/4.0/
+# Attribution may be made through hyperlink to the following URL:
+#   https://github.com/skieffer/mathnotes
+###############################################################################
+
+examp Pf_A8 """"
+
+class Examp(Examplorer):
+
+    def set_context(self):
+        return Context.AlgNT
+
+    def define_parameters(self):
+        return [
+            # Step 1
+            [
+                Pr_Param('ell', self,
+                    odd=True,
+                    default=7,
+                    tex=r'\ell'
+                ),
+                Int_Param('g', self,
+                    coprime_to='ell',
+                    gt=1,
+                    default=3
+                )
+            ]
+        ]
+
+    def intro(self):
+        return r"""
+        <p>
+        By means of the clever substitution $\zeta \mapsto \zeta^{g g'}$
+        (performed only in the numerator), it's
+        clear that $\frac{1 - \zeta}{1 - \zeta^g}$ must be equal to
+        $1 + \zeta^g + \zeta^{2g} + \cdots + \zeta^{(g'-1)g}$, but let's
+        examine this more thoroughly.
+        We can bring the denominator $1 - \zeta^g$ to the other side
+        of the equation, expand the product, and see that we indeed recover $1 - \zeta$:
+        $$\begin{align}
+            (1 + \zeta^g + \zeta^{2g} + \cdots + \zeta^{(g'-1)g})(1 - \zeta^g)
+            & = 1 + \zeta^g + \zeta^{2g} + \cdots + \zeta^{(g'-1)g} \\
+            & \quad\quad - \zeta^g - \zeta^{2g} - \cdots - \zeta^{(g'-1)g} - \zeta^{g' g} \\
+            & = 1 - \zeta^{g' g} \\
+            & = 1 - \zeta.
+        \end{align}$$
+        The general phenomenon is easy enough to see. Still, it is good to see a few
+        numerical examples as well:
+        </p>
+        """
+
+    def do_math_1(self, ell, g):
+        # Compute gp, inverse of g mod ell.
+        self.intermediates['gp'] = modinverse(g, ell)
+
+    def write_display_1(self, ell, g, gp):
+        html = ''
+
+        # Show the value of g'
+        html += r"<p>$g' = %s$ is the inverse of $g$ mod $\ell$,</p>" % gp
+        html += r"<p>so the exponent $(g' - 1)g$ is $(%s - 1)%s = %s$,</p>" % (gp, g, (gp-1)*g)
+        html += r"<p>the left-hand factor has $g' = %s$ terms,</p>" % gp
+        html += r"<p>in which the powers of $\zeta$ go up by $g = %s$ in each term,</p>" % g
+        html += r"<p>and we get</p>"
+
+        # Demonstrate algebra
+        z = Monomial(r'\zeta')
+        line1_factor1 = sum(z^(g*a) for a in range(gp))
+        line1_factor2 = 1 - (z^g)
+        line2_negterms = -sum(z^(g*a) for a in range(1, gp+1))
+        line3 = 1 - (z^(g*gp))
+        q = int((g*gp - 1)/ell)
+        # Would like this to work:
+
+        #line4 = 1 - (z^((ell |cdot| q) + 1))
+        #
+
+        #line4 = r'1 - \zeta^{%(ell)s \cdot %(q)s + 1}' % {
+        #    'q': q, 'ell': ell
+        #}
+
+        # On second thought...
+        if q == 1:
+            line4 = r'1 - \zeta^{\ell + 1}'
+        elif q == -1:
+            line4 = r'1 - \zeta^{-\ell + 1}'
+        else:
+            line4 = r'1 - \zeta^{%s \ell + 1}' % q
+
+
+        line5 = 1 - z
+        template = r"""
+        <div>
+        \begin{align}
+        \left(%(line1_factor1)s\right)\left(%(line1_factor2)s\right)
+        &= %(line1_factor1)s \\
+         & \quad\quad %(line2_negterms)s \\
+        &= %(line3)s \\
+        &= %(line4)s \\
+        &= %(line5)s
+        \end{align}
+        </div>
+        """
+        html += template % vars()
+
+        return html
+
+""""

@@ -1,0 +1,103 @@
+###############################################################################
+# This module belongs to Steve Kieffer's *MathNotes* Library.
+# It is licensed under the Creative Commons Attribution-ShareAlike 4.0
+# International License (CC BY-SA 4.0):
+#   https://creativecommons.org/licenses/by-sa/4.0/
+# Attribution may be made through hyperlink to the following URL:
+#   https://github.com/skieffer/mathnotes
+###############################################################################
+
+from gh.rrmath.lit.H.ilbert.ZB.Thm90 import Thm, Pf
+
+deduc X1 of Pf.A06 {
+
+    asrt A05 {
+        sy = "$@N_{K|k}(A) = A^{1 + S + \cdots + S^{\ell - 1}}$"
+    }
+
+    meson = "
+    A05, so Pf.A06, by Thm.P.
+    "
+}
+
+deduc X2 of Pf.A12 {
+
+    asrt A01 {
+        en = "For $@x \in k$, have $@S x = x$."
+    }
+
+    asrt A03 {
+        sy = "$@Ax = (x + \Theta)^{1 - S}A$"
+    }
+
+    rels R04 {
+
+        asrt A07 {
+            sy = "
+            $@Ax^{1 + S + \cdots + S^{\ell - 1}} =
+            \left( (x + \Theta)^{1 - S} A \right)^{1 + S + \cdots +
+            S^{\ell - 1}}$
+            "
+        }
+
+        asrt A08 {
+            sy = "
+            $@= (x + \Theta)^{(1 - S)(1 + S + \cdots + S^{\ell - 1})}
+            A^{1 + S + \cdots + S^{\ell - 1}}$
+            "
+        }
+
+        asrt A09 {
+            sy = "
+            $@= (x + \Theta)^
+            {1 + S + \cdots + S^{\ell-1} - S - S^2 - \cdots - S^\ell}\cdot 1$
+            "
+        }
+
+        asrt A10 {
+            sy = "$@= (x + \Theta)^{1 - 1}$"
+        }
+
+        asrt A11 {
+            sy = "$@= 1$"
+        }
+    }
+
+    meson = "
+    A01, so A03. Then R04.A07.
+    Have R04.A09 by Pf.A06.
+    From R04 get Pf.A12.
+    "
+}
+
+deduc X3 of Pf.A14 {
+
+    asrt A15 {
+        sy = "
+        $@Bx^S = 1 + Ax^S + Ax^{S + S^2} +
+        Ax^{S + S^2 + S^3} + \cdots +
+        Ax^{S + S^2 + \cdots + S^{\ell - 1}}$
+        "
+    }
+
+    rels R {
+
+        asrt A16 {
+            sy = "
+            $@Ax Bx^S = Ax^1 + Ax^{1 + S} +
+            Ax^{1 + S + S^2} + \cdots +
+            Ax^{1 + S + \cdots + S^{\ell - 1}}$
+            "
+        }
+
+        asrt A17 {
+            sy = "$@= Bx$"
+        }
+    }
+
+    meson = "
+    A15, so R.A16.
+    From Pf.A12 get R.A17.
+    From R get Pf.A14.
+    "
+}

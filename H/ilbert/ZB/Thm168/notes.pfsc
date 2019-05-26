@@ -1,0 +1,268 @@
+###############################################################################
+# This module belongs to Steve Kieffer's *MathNotes* Library.
+# It is licensed under the Creative Commons Attribution-ShareAlike 4.0
+# International License (CC BY-SA 4.0):
+#   https://creativecommons.org/licenses/by-sa/4.0/
+# Attribution may be made through hyperlink to the following URL:
+#   https://github.com/skieffer/mathnotes
+###############################################################################
+
+from gh.rrmath.lit.H.ilbert.ZB.Thm168 import Pf1A, Pf1C
+
+######################################################################
+# Expansions
+
+deduc X1 of Pf1C.E180 {
+
+    asrt A10 {
+        en = "
+        $@bbQ(zeta)$ has a power
+        basis in $@zeta$.
+        "
+    }
+
+    asrt A20 {
+        sy = "
+        $@lam^0 = 1$
+        $@lam^1 = 1 - zeta$
+        $@lam^2 = 1 - 2 zeta + zeta^2$
+        $@lam^3 = 1 - 3 zeta + 3 zeta^2 - zeta^3$
+        $@ccc$
+        "
+    }
+
+    asrt A30 {
+        en = "
+        The change-of-basis matrix from
+        powers of $@zeta$ to powers of $@lam$
+        is triangular with $@\pm 1$ on the diagonal.
+        "
+    }
+
+    asrt A40 {
+        en = "
+        $@bbQ(zeta)$ has a power
+        basis in $@lam$.
+        "
+    }
+
+    exin E50 {
+
+        en = "There are % such that"
+
+        intr I10 {
+            sy = "$@c0, c1, c2, ddd, cell-2 in bbZ$"
+        }
+
+        asrt A20 {
+            sy = "
+            $@alpu = c0 + c1 lam + c2 lam^2 + ccc
+                                 + cell-2 lamuuell-2$
+            "
+        }
+    }
+
+    wher W60 {
+
+        asrt A10 {
+            sy = "$@alpu = c0 + lam theta$"
+        }
+
+        intr I20 {
+            en = "$@theta$ is an integer of $@bbQ(zeta)$"
+        }
+    }
+
+    rels R70 {
+
+        asrt A10 {
+            sy = "
+            $@alpu^ell = c0^ell + lam^ell theta^ell
+                + sum over i from 1 to ell - 1;
+                  binom ell choose i; lam^i theta^i c0 sup ell - 1;$
+            "
+        }
+
+        asrt A20 {
+            sy = "$@equiv c0^ell mod frl^ell$"
+        }
+    }
+
+    meson = "
+    A10. But A20, hence A30,
+    therefore A40 by A10.
+    Then E50, so W60.
+    Hence R70.
+    Therefore Pf1C.E180.
+    "
+}
+
+deduc X2 of Pf1C.A340 {
+
+    asrt A10 {
+        en = "
+        Every factor on the left-hand side
+        of [(194.)](Pf1C.A320) is, if nonzero, an associate of $@\lambda$.
+        "
+    }
+
+    meson = "
+    Pf1C.A340 by Pf1C.D330.A70 and A10.
+    "
+}
+
+######################################################################
+# Notes
+
+anno Notes """
+
+# Notes on Theorem 168 #
+
+#### by Steve Kieffer
+
+...
+
+The proof is by contradiction. We suppose Eqn (185) did have a solution
+$@alp, beta, gam$. Then within this assumption we make a case split:
+
+* **Case 1**: Suppose none of $@alp, beta, gam$ is divisible by
+                $@frl$.
+* **Case 2**: Suppose at least one of $@alp, beta, gam$ is divisible by
+                $@frl$.
+                
+In each case we must derive a contradiction.
+
+
+## Case 1 ##
+
+**Suppose none of $@alp, beta, gam$ is divisible by $@frl$.**
+
+Hilbert begins by
+handling the cases $@ell = 3$ and $@ell = 5$ separately; the major
+bulk of the work is then in handling the remaining case $@ell geq 7$.
+
+We therefore break down Case 1 into three subcases, 1a, 1b, and 1c,
+according to whether $@ell$ is $3$, $5$, or $@ geq 7$.
+Before going into these three subcases, we give a preview as to why
+this case split is needed at all.
+
+### Preview on the Need for the Case Split ###
+
+There are two reasons for the case split. Naturally they both emerge in the
+main case, $@ell geq 7$, since this is an example of "generic reasoning
+that works for almost all cases".
+
+#### The First Reason ####
+
+The first reason for the case split has to do only with the case
+$@ell = 3$, and it relates to the fact that there are three terms in
+the Fermat equation.
+
+In <chart:w10>[this inference]{
+    "view": "Pf1C.D330.D50.A80"
+}
+we are considering what would happen if all three numbers $@alp, beta, gam$
+were congruent to one another mod $@frl$. In that case, in summing their
+$@ell eth$ powers, a factor of $3$ arises. We want to know $3$ is coprime
+to $@frl$ here, so that we can infer that $@frl$ would divide $@alp$,
+and thereby derive a contradiction.
+
+
+#### The Second Reason ####
+
+The second reason for the case split is quite interesting.
+Hilbert derives the main contradiction for the case $@ell geq 7$ from
+<chart:w20>[a certain 4x4 Vandermonde determinant]{
+    "view": {
+        "objects": "Pf1C.A310",
+        "incl_nbhd": true
+    }
+}
+being congruent to zero mod $@frl sup ell$.
+Surprisingly, the _size_ of the matrix is a key parameter! 
+
+Because this Vandermonde matrix has four rows (and columns), the determinant has
+$@binom 4 choose 2; = 6$ factors.
+Hilbert shows that each of these factors must be divisible by
+$@frl$ _exactly once_. But then since $@ell geq 7$, there are not
+enough factors of $@frl$ on the left to be zero mod $@frl sup ell$,
+hence the contradiction.
+
+This leaves the question of why the matrix had to be $@4 times 4$.
+Why couldn't it have been smaller? It is because we are viewing
+<chart:w30>[these congruences]{
+    "view": "Pf1C.A230"
+}
+as yielding a linear system in the four unknowns, $@mew, rho, mew', rho'$.
+Because there are four unknowns, and we need a square matrix, it has
+to be $@4 times 4$.
+
+_**Question for the Art History of Proofs:**
+Where can we find similar examples of this phenomenon?_
+
+
+### Case 1a ###
+
+**$@ell = 3$**
+
+Hilbert gives just one paragraph to the cases $@ell=3, 5$, and a lot
+happens in just a few sentences. Remember, the _Zahlbericht_ was a
+_report_ (_Bericht_), so we should not expect to find much explanatory
+prose.
+
+Why can $@alp, beta, gam$ be only $@plmi 1$ mod $@frl$?
+Recall that $@frl = (1 - zeta)$, so mod $@frl$ every cyclotomic
+integer reduces to a rational integer, by substituting $1$ for $@zeta$.
+From there the conclusion follows easily since $@frl mid 3$.
+
+Hilbert next cubes the numbers $@alp, beta, gam$, and claims that
+these cubes must also be congruent to $@plmi 1$, but this time mod
+$@frl^3$. Had the modulus stayed at $@frl$, the claim would have been
+immediate. But in moving to modulus $@frl^3$ it is natural to ask
+two questions: (1) why do we need this, and (2) how does it follow? 
+
+To see why it is needed we have to look ahead to <chart:w40>[the next step]{
+    "view": "Pf1A.A30"
+} 
+There we observe that the sum of the three cubes can only be
+$@plmi 1$ or $@plmi 3$ mod $@frl^3$, our purpose being to conclude that
+the sum therefore cannot equal zero. And it is here that we see why
+we need the modulus to be $@frl^3$, not $@frl$: since $@frl mid 3$, the sum
+of cubes actually could be congruent to zero mod $@frl$, and thus
+potentially equal to zero. In fact even $@frl squ$
+divides $3$, so $@frl^3$ is the smallest power of $@frl$ that can
+get us what we want.
+
+This leaves the other question, of how we get <chart:w50>[the claimed congruence]{
+    "view": "Pf1A.A20"
+}.
+
+Sanity Check: It is not just a simple rule of congruences, is it?
+Given $@a equiv b mod m$, and an integer $n > 2$, do we in general have
+$@a^n equiv b^n mod m^n$?
+
+Answer: No. For example, $@4 equiv 1 mod 3$,
+but $@4 squ not equiv 1 squ mod 3 squ$.
+
+It takes <chart:w60>[a few steps]{
+    "view": "an expansion..."
+}. At first it looks as if the classic idea from which we get additivity of
+the Frobenius automorphism might suffice -- and indeed we use this here --
+but even this is not quite enough.
+
+
+### Case 1b ###
+
+**$@ell = 5$**
+
+This case receives even fewer words than the last. Admittedly it is
+mostly similar. However, handling the possible sums of three numbers
+each of which must be either $@plmi 1$ or $@plmi 32$, involves a slightly
+different approach.
+
+What is the same as the last case is that here again we expect the modulus
+$@frl^ell$ to be large enough to get us what we need. This time that means
+checking that, among all the possible sums, while some may be zero mod
+$5$, none is zero mod $25$.
+
+"""

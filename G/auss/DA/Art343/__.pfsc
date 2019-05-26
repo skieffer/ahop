@@ -1,0 +1,137 @@
+###############################################################################
+# This module belongs to Steve Kieffer's *MathNotes* Library.
+# It is licensed under the Creative Commons Attribution-ShareAlike 4.0
+# International License (CC BY-SA 4.0):
+#   https://creativecommons.org/licenses/by-sa/4.0/
+# Attribution may be made through hyperlink to the following URL:
+#   https://github.com/skieffer/mathnotes
+###############################################################################
+
+examp Periods """"
+
+class Examp(Examplorer):
+
+    def set_context(self):
+        return Context.Gauss
+
+    def intro(self):
+        return r"""
+        <p>
+        In Article 343, Gauss introduces the <i>periods</i> $(f, \lambda)$.
+        </p>
+        <p>
+        He begins by demonstrating that the periods are independent of the choice
+        of generator $g$. Let's see some examples.
+        </p>
+        <p>
+        Exercise: For each case you consider here, manually compute $\omega$, pick $\mu$, and
+        compute $\nu$ as in Gauss's proof.
+        </p>
+        """
+
+    def define_parameters(self):
+        return [
+            # Step 1
+            [
+                Pr_Param(
+                    'n', self,
+                    odd=True,
+                    default=19,
+                    chooser_upper_bound=100
+                )
+            ],
+            # Step 2
+            [
+                PrimRes_Param(
+                    'g', self,
+                    modulus='n',
+                    default=2
+                ),
+                PrimRes_Param(
+                    'G', self,
+                    modulus='n',
+                    default=10
+                ),
+                Divisor_Param(
+                    'e', self,
+                    dividing = Symbol('n') - 1,
+                    default=3
+                ),
+                Int_Param(
+                    'lam', self,
+                    tex=r'\lambda',
+                    gt=0,
+                    lt='n',
+                    default=1
+                )
+            ]
+        ]
+
+    def write_display_2(self, n, g, G, e, lam):
+        f = int((n-1)/e)
+
+        h, H = 1, 1
+        for c in range(e):
+            h = (h*g) % n
+            H = (H*G) % n
+
+        powers_of_h, powers_of_H = [], []
+        h_pow, H_pow = 1, 1
+        for j in range(f):
+            powers_of_h.append(h_pow)
+            powers_of_H.append(H_pow)
+            h_pow = (h_pow * h) % n
+            H_pow = (H_pow * H) % n
+
+        periods_g, periods_G = [], []
+        a, A = lam, lam
+        for i in range(e):
+            b, B = a, A
+            period_terms_g, period_terms_G = [], []
+            for j in range(f):
+                period_terms_g.append('r^{%s}' % b)
+                period_terms_G.append('r^{%s}' % B)
+                b = (b*h) % n
+                B = (B*H) % n
+            a = (a*g) % n
+            A = (A*G) % n
+            periods_g.append(' + '.join(period_terms_g))
+            periods_G.append(' + '.join(period_terms_G))
+
+        html = ''
+
+        html += r'<p>$f = \frac{n - 1}{e} = %s$</p>' % f
+        html += '\n'
+        html += r'<p>$h \equiv g^e \equiv %s$ mod $n$</p>' % h
+        html += '\n'
+        html += r'<p>$H \equiv G^e \equiv %s$ mod $n$</p>' % H
+        html += '\n'
+
+        html += r'$$\begin{align}' + '\n'
+        html += r'1, h, h^2, \ldots, h^{f-1} & = ' + ', '.join(map(str, powers_of_h)) + r' \\' + '\n'
+        html += r'1, H, H^2, \ldots, H^{f-1} & = ' + ', '.join(map(str, powers_of_H)) + r' \\' + '\n'
+        html += r'\end{align}$$'
+
+        html += r'<p>Using $g$:</p>'
+        html += r'$$\begin{align}' + '\n'
+        for i in range(e):
+            html += r'(f, \lambda%s) & = %s \\' % (
+                '' if i == 0 else ' g' if i == 1 else ' g^{%s}' % i,
+                periods_g[i]
+            )
+            html += '\n'
+        html += r'\end{align}$$'
+
+        html += r'<p>Using $G$:</p>'
+        html += r'$$\begin{align}' + '\n'
+        for i in range(e):
+            html += r'(f, \lambda%s) & = %s \\' % (
+                '' if i == 0 else ' G' if i == 1 else ' G^{%s}' % i,
+                periods_G[i]
+            )
+            html += '\n'
+        html += r'\end{align}$$'
+
+        return html
+
+""""

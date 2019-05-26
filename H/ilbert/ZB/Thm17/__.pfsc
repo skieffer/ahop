@@ -1,0 +1,95 @@
+###############################################################################
+# This module belongs to Steve Kieffer's *MathNotes* Library.
+# It is licensed under the Creative Commons Attribution-ShareAlike 4.0
+# International License (CC BY-SA 4.0):
+#   https://creativecommons.org/licenses/by-sa/4.0/
+# Attribution may be made through hyperlink to the following URL:
+#   https://github.com/skieffer/mathnotes
+###############################################################################
+
+examp Eg1 """"
+
+class Examp(Examplorer):
+
+    def set_context(self):
+        return Context.AlgNT
+
+    def intro(self):
+        return r"""
+        <p>
+        The theorem establishes that when we reduce the elements of
+        an integral basis for our field $k$ mod a prime ideal $\mathfrak{p}$,
+        there must be some maximal number $f \leq n$ of reduced elements that can
+        form a linearly independent set mod $p$. (In fact $f$ must be a divisor of
+        $n$. Why?)
+        </p>
+        <p>
+        But the proof is non-constructive, and we are left with no idea of
+        <i>how</i> this happens. In order to gain a more tangible understanding,
+        it helps to examine what the reduced basis elements actually look like
+        in a few cases.
+        </p>
+        """
+
+    def define_parameters(self):
+        return [
+            # Step 1
+            [
+                NF_Param('k', self,
+                    default='polcyclo(7)'
+                ),
+                Pr_Param('p', self,
+                    default = 11
+                )
+            ],
+            # Step 2
+            [
+                IdPr_Param('frp', self,
+                    nf='k',
+                    ratpr='p',
+                    tex=r'\mathfrak{p}'
+                )
+            ]
+        ]
+
+    def do_math_1(self, k, p):
+        self.callGP(
+            'k = nfinit(%s);' % k,
+            'k.zk',
+            name_list=['zk']
+        )
+
+    def write_display_1(self, zk):
+        polys = zk[1:-1].split(', ')
+        html = ''
+        html += "<p>An integral basis for $k$:</p>" + '\n'
+        html += r'$$\left\lbrace %s \right\rbrace$$' % (
+            ', '.join(SymbPoly(p).toString('x') for p in polys)
+        ) + '\n'
+        return html
+
+    def do_math_2(self, k, p, frp):
+        self.callGP(
+            'k = nfinit(%s);' % k,
+            'P = idealprimedec(k, %s);' % p,
+            'modP = nfmodprinit(k, P[%s]);' % frp,
+            'apply(t->nfmodpr(k,t,modP), k.zk)',
+            name_list=['red_basis']
+        )
+
+    def write_display_2(self, zk, red_basis):
+        polys = zk[1:-1].split(', ')
+        red_polys = red_basis[1:-1].split(', ')
+        html = ''
+        #html += r"<p>The basis elements reduced mod $\mathfrak{p}$:</p>"
+        #html += r'$$\left\lbrace %s \right\rbrace$$' % (
+        #    ', '.join(SymbPoly(p).toString('x') for p in polys)
+        #)
+        html += r"<p>Reducing the basis elements mod $\mathfrak{p}$:</p>" + '\n'
+        html += r'\begin{array}{rcl}' + '\n'
+        for p, r in zip(polys, red_polys):
+            html += r'%s & \mapsto & %s \\' % (SymbPoly(p).toString('x'), SymbPoly(r).toString('x')) + '\n'
+        html += r'\end{array}' + '\n'
+        return html
+
+""""
