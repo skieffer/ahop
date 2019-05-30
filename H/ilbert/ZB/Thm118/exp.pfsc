@@ -8,9 +8,9 @@
 ###############################################################################
 
 from gh.rrmath.lit.H.ilbert.ZB.Thm118 import Pf1
-from gh.rrmath.lit.H.ilbert.ZB.Pg180L1 import Thm as RemarkOnP180
+from gh.rrmath.lit.H.ilbert.ZB.Pg180L1 import Rem as RemarkOnP180
 
-deduc X1 of Pf1.A6 {
+deduc X1 of Pf1.R6 {
 
     rels R10 {
 
@@ -81,6 +81,6 @@ deduc X1 of Pf1.A6 {
     But R10.A3 by A15.
     Have R50.A2 by A40.
     From A30 get R50.A3.
-    But Pf1.A6 by RemarkOnP180 and Pf1.I5 and R10.
+    But Pf1.R6 by RemarkOnP180 and Pf1.I5 and R10.
     "
 }
