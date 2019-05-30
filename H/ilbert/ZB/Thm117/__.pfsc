@@ -7,7 +7,9 @@
 #   https://github.com/skieffer/mathnotes
 ###############################################################################
 
-examp Pf_A8 """"
+from gh.rrmath.lit.H.ilbert.ZB.Thm117 import Pf
+
+examp eg1 for Pf.A8 """"
 
 class Examp(Examplorer):
 
