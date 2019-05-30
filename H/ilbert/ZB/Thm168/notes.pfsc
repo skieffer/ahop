@@ -245,7 +245,6 @@ Answer: No. For example, $@4 equiv 1 mod 3$,
 but $@4 squ not equiv 1 squ mod 3 squ$.
 
 It takes <chart:w60>[a few steps]{
-    "view": "an expansion..."
 }. At first it looks as if the classic idea from which we get additivity of
 the Frobenius automorphism might suffice -- and indeed we use this here --
 but even this is not quite enough.
