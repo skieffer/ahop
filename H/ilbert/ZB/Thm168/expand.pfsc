@@ -1,0 +1,23 @@
+
+
+deduc ellPowerCongruenceLemma {
+
+    intr I {
+        en = "
+        Let $@alp$ and $@bet$ be any elements of the ring $R$ of
+        integers in the $@ell eth$ cyclotomic field $@bbQ(zet)$,
+        for $@ell$ an odd prime. Let $@frl = (1 - zet)$.
+        "
+    }
+    
+    supp S {
+        en = "Suppose $@alp equiv bet mod frl$."
+    }
+    
+    asrt C {
+        sy = "$@alp^ell equiv bet^ell mod frl^ell$"
+    }
+    
+    meson = "Let I. Suppose S. Then C."
+
+}

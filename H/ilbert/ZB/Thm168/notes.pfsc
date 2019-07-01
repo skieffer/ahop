@@ -8,6 +8,7 @@
 ###############################################################################
 
 from gh.rrmath.lit.H.ilbert.ZB.Thm168 import Pf1A, Pf1C
+from .expand import ellPowerCongruenceLemma
 
 ######################################################################
 # Expansions
@@ -237,12 +238,25 @@ This leaves the other question, of how we get <chart:w50>[the claimed congruence
     "view": "Pf1A.A20"
 }.
 
-Sanity Check: It is not just a simple rule of congruences, is it?
+Sanity Check: It's not just a simple rule of congruences, is it?
 Given $@a equiv b mod m$, and an integer $n > 2$, do we in general have
 $@a^n equiv b^n mod m^n$?
 
 Answer: No. For example, $@4 equiv 1 mod 3$,
 but $@4 squ not equiv 1 squ mod 3 squ$.
+
+Since we only need to make this inference for the cases $@ell = 3$ and $@ell = 5$,
+we could simply check these two cases and move on.
+But we can gain a deeper understanding by proving
+<chart:w1>[a more general result]{
+    "view": "ellPowerCongruenceLemma",
+    "group": "extras"
+}.
+
+
+...
+
+...
 
 It takes <chart:w60>[a few steps]{
 }. At first it looks as if the classic idea from which we get additivity of
