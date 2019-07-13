@@ -1,0 +1,42 @@
+
+import gh.rrmath.lit.H.ilbert.ZB as ZB
+import gh.skieffer.mathnotes.H.ilbert.ZB as ZBnotes
+
+
+anno Notes """
+
+Question: Why are we justified in <chart:w1>[defining $@b star$ as we do]{
+    "view":"ZB.Pg369_2.Pf.E20"
+}?
+
+Answer: We are defining $@b star$ to be congruent to $b/a$ mod $@ell$, so
+we need to know that $a$ has an inverse mod $@ell$. How do we know that?
+This is where we are using the assumption that $@frl$ does not divide $@alp$.
+For if $a$ were divisible by $@ell$, then it would certainly also be zero
+mod $@frl squ$, hence we would have $@alp equiv b lam mod frl squ$, and $@alp$
+would be divisible by $frl$.
+
+## Arithmetic mod $@lam squ$
+
+The inference to <chart:w2>[this node]{
+    "view":"gh.rrmath.lit.H.ilbert.ZB.Pg369_2.Pf.A30"
+} is not at all obvious. It makes use of subtle facts about arithmetic mod
+$@frl squ$. Equivalently, we can work mod $@lam squ$, and we will take that
+approach here.
+
+Hilbert _has_ actually provided us, earlier in the text, a key fact that
+we need to use here, but he has in no way made any clear sign posts to it.
+It arises <chart:w3>[in the proof of Lemma 18]{
+    "view":"ZB.Lem18.Pf.A40"
+}, and even there it is left to us to prove it for ourselves.
+
+The proof is not difficult, and relies on a key idea which we use frequently
+in the arithmetic of cyclotomic fields; namely, the idea of switching back
+and forth between working in terms of $@zet$, and working in terms of $@lam$.
+See <chart:w4>[our expansion]{
+    "view":"ZBnotes.Lem18.Exp1"
+}.
+
+
+
+"""
