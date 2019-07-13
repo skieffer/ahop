@@ -2,8 +2,63 @@
 import gh.rrmath.lit.H.ilbert.ZB as ZB
 import gh.skieffer.mathnotes.H.ilbert.ZB as ZBnotes
 
+deduc Lem1 {
+    asrt C {
+        en="
+        For any $@r in bbZ$,
+            $@zetuur lam equiv lam mod lam squ$.
+        "
+    }
+    meson="C."
+}
+
+deduc Pf1 of Lem1.C {
+    rels R {
+        asrt A10 {
+            sy="$@lam - lam zetuur = lam qnt 1 - zetuur;$"
+        }
+        asrt A20 {
+            sy="$@= vep lam squ$ where $@vep in bbZ[zet]$ is a unit"
+        }
+        asrt A30 {
+            sy="$@equiv 0 mod lam squ$"
+        }
+    }
+    meson="
+    Lem1.C by R.
+    Meanwhile, R.A20 by ZB.Thm117.Pf.A9.
+    "
+}
+
+deduc Exp1 of ZB.Pg369_2.Pf.A30 {
+    
+    rels R10 {
+        asrt A10 {
+            sy="$@zet sup b star; alp equiv a zet sup b star; +
+                    b zet sup b star; lam mod frl squ$"
+        }
+        asrt A20 {
+            sy="$@equiv a qnt 1 - b star lam; + b lam mod frl squ$"
+        }
+        asrt A30 {
+            sy="$@equiv a - b lam + b lam mod frl squ$"
+        }
+        asrt A40 {
+            sy="$@equiv a mod frl squ$"
+        }
+    }
+    
+    meson="
+    ZB.Pg369_2.Pf.A30 by R10.
+    Meanwhile, R10.A10 by ZB.Pg369_2.Pf.I10.
+    Meanwhile, R10.A20 by ZB.Lem18.Pf.A40 and Lem1.
+    Meanwhile, R10.A30 by ZB.Pg369_2.Pf.E20.A.
+    "
+}
 
 anno Notes """
+
+# Semiprimary Numbers
 
 Question: Why are we justified in <chart:w1>[defining $@b star$ as we do]{
     "view":"ZB.Pg369_2.Pf.E20"
@@ -14,17 +69,26 @@ we need to know that $a$ has an inverse mod $@ell$. How do we know that?
 This is where we are using the assumption that $@frl$ does not divide $@alp$.
 For if $a$ were divisible by $@ell$, then it would certainly also be zero
 mod $@frl squ$, hence we would have $@alp equiv b lam mod frl squ$, and $@alp$
-would be divisible by $frl$.
+would be divisible by $@frl$.
 
 ## Arithmetic mod $@lam squ$
 
 The inference to <chart:w2>[this node]{
-    "view":"gh.rrmath.lit.H.ilbert.ZB.Pg369_2.Pf.A30"
+    "view":"ZB.Pg369_2.Pf.A30"
 } is not at all obvious. It makes use of subtle facts about arithmetic mod
 $@frl squ$. Equivalently, we can work mod $@lam squ$, and we will take that
 approach here.
 
-Hilbert _has_ actually provided us, earlier in the text, a key fact that
+As an initial sanity check, we should pause and ask why $@b star$, which is
+going to be the exponent of a root of unity, should be defined in terms of
+_coefficients_ appearing in the representation of $@alp$. What could the
+exponent in a power of $@zet$ possibly have to do with these coefficients?
+
+If we think about times when exponents and coefficients wind up being related,
+we might well think of derivatives, and hence first-order approximations in
+general. And if we think that way, we're on the right track.
+
+Hilbert _has_ actually provided us, earlier in the text, the key fact that
 we need to use here, but he has in no way made any clear sign posts to it.
 It arises <chart:w3>[in the proof of Lemma 18]{
     "view":"ZB.Lem18.Pf.A40"
@@ -35,8 +99,15 @@ in the arithmetic of cyclotomic fields; namely, the idea of switching back
 and forth between working in terms of $@zet$, and working in terms of $@lam$.
 See <chart:w4>[our expansion]{
     "view":"ZBnotes.Lem18.Exp1"
-}.
+} for the easy derivation.
 
+Using this idea, we can now get back to
+<chart:w6>[the formation of a semiprimary number]{
+    "view":"ZB.Pg369_2.Pf.A30"
+} via multiplication by a suitable root of unity.
+Let's <chart:w5>[fill in the steps]{
+    "view":"Exp1"
+}.
 
 
 """
