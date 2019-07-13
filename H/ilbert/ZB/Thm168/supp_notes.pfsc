@@ -1,0 +1,100 @@
+###############################################################################
+# This module belongs to Steve Kieffer's *MathNotes* Library.
+# It is licensed under the Creative Commons Attribution-ShareAlike 4.0
+# International License (CC BY-SA 4.0):
+#   https://creativecommons.org/licenses/by-sa/4.0/
+# Attribution may be made through hyperlink to the following URL:
+#   https://github.com/skieffer/mathnotes
+###############################################################################
+
+from .expand import SuppLem_ZB168_1, SuppPf_01, SuppLem_ZB168_2
+
+anno Lem1 """
+
+## Inference to modulus $@frl^ell$ ##
+
+In fact we'll prove it in two different ways, one more conceptual, one more symbolic.
+Each approach provides a different type of understanding.
+For both of the approaches we consider, the outer framework is the same, so
+<chart:w4>[we begin with that]{
+    "view": "SuppPf_01",
+    "group": "extras"
+}.
+
+From <chart:w5>[the congruence of $@sig$ and $@tau$ mod $@frl$]{
+    "view":"gh.skieffer.mathnotes.H.ilbert.ZB.Thm168.expand.SuppLem_ZB168_1.S",
+    "group": "extras"
+} we quickly get that $@frl^ell$ <chart:w6>[divides]{
+    "view":"gh.skieffer.mathnotes.H.ilbert.ZB.Thm168.expand.SuppPf_01.A20",
+    "group": "extras"
+} the $@ell eth$ power of the difference $@sig - tau$, which is almost but not quite
+what we need. We need that $@frl^ell$ divides the difference of $@ell eth$ powers
+$@sig^ell - tau^ell$.
+
+This naturally brings to mind the additive property of the Frobenius automorphism
+(equivalently, D.A. Art. 51),
+and indeed we will use the key idea by which that property is established.
+However, in that context we would be working modulo the prime $@ell$ itself; here we
+have a harder job to do because our modulus $@frl^ell$ is just slightly larger (namely,
+by one more factor of $@frl$).
+
+We begin in a natural way, by <chart:w7>[introducing a polynomial $F(x, y)$]{
+    "view":"gh.skieffer.mathnotes.H.ilbert.ZB.Thm168.expand.SuppPf_01.I30",
+    "group": "extras"
+} that measures the difference between what we have, and what we want.
+If we can show that <chart:w8>[$@frl^ell$ divides $@F(sig, tau)$]{
+    "view":"gh.skieffer.mathnotes.H.ilbert.ZB.Thm168.expand.SuppPf_01.A100",
+    "group": "extras"
+}, we'll be done.
+
+And of course the reason for defining $F$ the way we did was precisely to bring in
+the idea behind Frobenius. When $@ell$ is prime, we can take the $@ell eth$ power of
+a binomial, expand it out, subtract off the first and last terms, and then the result
+is divisible by $@ell$, since $@ell$ divides every remaining binomial coefficient
+$@binom ell choose k;$ with $@0 < k < ell$. That's because $@ell$ prime means $@ell$
+occurs in the numerator of $@frac ell! over k! (ell - k)!;$ but not in the denominator.
+(See D.A. Art. 41.)
+
+We therefore <chart:w9>[introduce]{
+    "view":"gh.skieffer.mathnotes.H.ilbert.ZB.Thm168.expand.SuppPf_01.I40",
+    "group": "extras"
+} the polynomial $G$, and <chart:w11>[observe]{
+    "view":"gh.skieffer.mathnotes.H.ilbert.ZB.Thm168.expand.SuppPf_01.A50",
+    "group": "extras"
+} that it has integer coefficients.
+
+We are nearly done. We have already shown that $@ell = frl sup ell - 1;$ divides $F(x, y)$,
+hence $@F(sig, tau)$.
+We just need to show that _one more_ factor of $@frl$ also divides $@F(sig, tau)$; in other words,
+we want to show <chart:w12>[that]{
+    "view":"gh.skieffer.mathnotes.H.ilbert.ZB.Thm168.expand.SuppPf_01.A90",
+    "group": "extras"
+} $@frl$ divides $@G(sig, tau)$.
+The question is how we get there, and we are going to consider two different ways: one conceptual, and
+one symbolic.
+
+First let's consider <chart:w13>[the more conceptual approach]{
+    "view":"gh.skieffer.mathnotes.H.ilbert.ZB.Thm168.expand.SuppPf_01_c",
+    "group": "extras"
+}.
+Here we begin with <chart:w14>[the easy observation]{
+    "view":"gh.skieffer.mathnotes.H.ilbert.ZB.Thm168.expand.SuppPf_01_c.R10",
+    "group": "extras"
+} that $(x - y)$ divides evenly into $F(x, y)$.
+
+...
+
+In the more symbolic/computational approach, we observe directly that $x - y$ divides $G(x, y)$.
+For this we can use <chart:w15>[a more general lemma]{
+    "view":"SuppLem_ZB168_2",
+    "group": "extras"
+}.
+As is so often the case, the lemma is stated in a more general form than that in which you would
+be apt to have first discovered it. Given our present motivations, we would be apt to discover the
+pattern by dividing $x - y$ into $G(x, y)$ for $@ell = 3$ and $@ell = 5$, and maybe even $@ell = 7$.
+Before even thinking too hard about the lemma, it's worth
+<examp:w16>[considering those examples]{
+    
+}
+
+"""

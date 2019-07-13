@@ -8,7 +8,7 @@
 ###############################################################################
 
 from gh.rrmath.lit.H.ilbert.ZB.Thm168 import Pf1A, Pf1C
-from .expand import ellPowerCongruenceLemma
+from .expand import SuppLem_ZB168_1, SuppPf_01, SuppLem_ZB168_2
 
 ######################################################################
 # Expansions
@@ -123,8 +123,10 @@ anno Notes """
 
 ...
 
-The proof is by contradiction. We suppose Eqn (185) did have a solution
-$@alp, beta, gam$. Then within this assumption we make a case split:
+The proof is by contradiction. We suppose
+<chart:w2>[Eqn (185)]{"view":"gh.rrmath.lit.H.ilbert.ZB.Thm168.Thm.A"}
+did have a solution $@alp, beta, gam$.
+Then within this assumption we make a case split:
 
 * **Case 1**: Suppose none of $@alp, beta, gam$ is divisible by
                 $@frl$.
@@ -211,10 +213,11 @@ happens in just a few sentences. Remember, the _Zahlbericht_ was a
 _report_ (_Bericht_), so we should not expect to find much explanatory
 prose.
 
-Why can $@alp, beta, gam$ be only $@plmi 1$ mod $@frl$?
+<chart:w3>[To begin with]{"view":"gh.rrmath.lit.H.ilbert.ZB.Thm168.Pf1A.A10"},
+why can $@alp, beta, gam$ be only $@plmi 1$ mod $@frl$?
 Recall that $@frl = (1 - zeta)$, so mod $@frl$ every cyclotomic
 integer reduces to a rational integer, by substituting $1$ for $@zeta$.
-From there the conclusion follows easily since $@frl mid 3$.
+From there the conclusion follows easily since $@3 equiv 0 mod frl$.
 
 Hilbert next cubes the numbers $@alp, beta, gam$, and claims that
 these cubes must also be congruent to $@plmi 1$, but this time mod
@@ -228,10 +231,10 @@ To see why it is needed we have to look ahead to <chart:w40>[the next step]{
 There we observe that the sum of the three cubes can only be
 $@plmi 1$ or $@plmi 3$ mod $@frl^3$, our purpose being to conclude that
 the sum therefore cannot equal zero. And it is here that we see why
-we need the modulus to be $@frl^3$, not $@frl$: since $@frl mid 3$, the sum
-of cubes actually could be congruent to zero mod $@frl$, and thus
-potentially equal to zero. In fact even $@frl squ$
-divides $3$, so $@frl^3$ is the smallest power of $@frl$ that can
+we need the modulus to be $@frl^3$, not $@frl$. Since $@frl mid 3$, the sum
+of cubes actually could be _congruent to_ zero mod $@frl$, and thus
+potentially _equal to_ zero. In fact even $@frl squ$
+divides $3$, but $@frl^3$ does not; so $@frl^3$ is the smallest power of $@frl$ that can
 get us what we want.
 
 This leaves the other question, of how we get <chart:w50>[the claimed congruence]{
@@ -239,7 +242,7 @@ This leaves the other question, of how we get <chart:w50>[the claimed congruence
 }.
 
 Sanity Check: It's not just a simple rule of congruences, is it?
-Given $@a equiv b mod m$, and an integer $n > 2$, do we in general have
+Given $@a equiv b mod m$, and an integer $@n geq 2$, do we in general have
 $@a^n equiv b^n mod m^n$?
 
 Answer: No. For example, $@4 equiv 1 mod 3$,
@@ -249,10 +252,12 @@ Since we only need to make this inference for the cases $@ell = 3$ and $@ell = 5
 we could simply check these two cases and move on.
 But we can gain a deeper understanding by proving
 <chart:w1>[a more general result]{
-    "view": "ellPowerCongruenceLemma",
+    "view": "SuppLem_ZB168_1",
     "group": "extras"
 }.
-
+We discuss it <notes:w4>[here]{
+    "libpath":"gh.skieffer.mathnotes.H.ilbert.ZB.Thm168.supp_notes.Lem1"
+}.
 
 ...
 

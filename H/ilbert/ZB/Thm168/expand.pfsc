@@ -1,23 +1,244 @@
 
 
-deduc ellPowerCongruenceLemma {
+deduc SuppLem_ZB168_1 {
 
     intr I {
         en = "
-        Let $@alp$ and $@bet$ be any elements of the ring $R$ of
+        Let $@sig$ and $@tau$ be any elements of the ring $@calO$ of
         integers in the $@ell eth$ cyclotomic field $@bbQ(zet)$,
         for $@ell$ an odd prime. Let $@frl = (1 - zet)$.
         "
     }
     
     supp S {
-        en = "Suppose $@alp equiv bet mod frl$."
+        en = "Suppose $@sig equiv tau mod frl$."
     }
     
     asrt C {
-        sy = "$@alp^ell equiv bet^ell mod frl^ell$"
+        sy = "$@sig^ell equiv tau^ell mod frl^ell$"
     }
     
     meson = "Let I. Suppose S. Then C."
 
 }
+
+deduc SuppPf_01 of SuppLem_ZB168_1.C {
+    
+    asrt A10 {
+        sy = "$@frl mid sig - tau$"
+    }
+    
+    asrt A20 {
+        sy = "$@frl^ell mid (sig - tau)^ell$"
+    }
+    
+    intr I30 {
+        en = "
+        Let $@F(x, y) = (x - y)^ell - (x^ell - y^ell) in bbZ[x, y]$
+        "
+    }
+    
+    intr I40 {
+        en = "Let $@G(x, y) = frac F(x, y) over ell;$"
+    }
+    
+    asrt A50 {
+        sy = "$@G(x, y) in bbZ[x, y]$"
+    }
+    
+    mthd M60 {
+        en = "
+        As in the proof of the
+        additive property of the
+        Frobenius automorphism.
+        "
+    }
+    
+    asrt A70 {
+        sy="$@frac F(sig, tau) over ell; = G(sig, tau) in calO$"
+    }
+    
+    asrt A80 {
+        sy="$@sig - tau mid G(sig, tau)$"
+    }
+    
+    asrt A90 {
+        sy = "$@frl mid G(sig, tau)$"
+    }
+    
+    asrt A100 {
+        sy = "$@frl^ell mid F(sig, tau)$"
+    }
+    
+    asrt A110 {
+        sy="$@frl^ell mid sig^ell - tau^ell$"
+    }
+    
+    meson = "
+    A10 by SuppLem_ZB168_1.S, so A20.
+    Meanwhile let I30. Let I40. Then A50 applying M60, so A70.
+    But A90 by A80 and A10.
+    So A100, using A70.
+    Therefore A110 using A20,
+    hence SuppLem_ZB168_1.C.
+    "
+    
+}
+
+deduc SuppPf_01_c of SuppPf_01.A80 {
+    
+    rels R10 {
+        
+        asrt A1 {
+            sy="
+            $$@frac F(x, y) over x - y; = (x - y) sup ell - 1; -
+                sum over k from 0 to ell - 1; xuuell-1-k yuuk$$
+            "
+        }
+        
+        asrt A2 {
+            sy="$@ in bbZ[x, y]$"
+        }
+    }
+    
+    asrt A20 {
+        sy = "$$@frac F(x, tau) over x - tau; in calO[x]$$"
+    }
+    
+    intr I25 {
+        en="Let $@f(x) = F(x, tau) in calO[x]$"
+    }
+    
+    asrt A30 {
+        en="
+        $@tau$ is a root of $f(x)$
+        "
+    }
+    
+    intr I40 {
+        en="Let $@g(x) = G(x, tau) in calO[x]$"
+    }
+    
+    asrt A50 {
+        en="$g$ has the same zeros over $@calO$ as $f$"
+    }
+    
+    asrt A60 {
+        en="$@(x - tau)$ divides $g(x)$ over $@calO[x]$"
+    }
+    
+    exin E70 {
+        
+        intr I {
+            sy="$@q(x) in calO[x]$"
+        }
+        
+        asrt A {
+            sy="$@g(x) = (x - tau)q(x)$"
+        }
+        
+    }
+    
+    asrt A80 {
+        sy="$@G(sig, tau) = g(sig) = (sig - tau)q(sig)$"
+    }
+    
+    meson = "
+    From SuppPf_01.I30 get R10.
+    From R10.A2, get A20.
+    Let I25.
+    Then A30 by A20.
+    Let I40.
+    A50.
+    Then A60, by A30.
+    Therefore E70, so A80, hence SuppPf_01.A80.
+    "
+    
+}
+
+deduc SuppLem_ZB168_2 {
+    
+    intr I {
+        en="
+        Let $R$ be a ring, and let $@f(x, y) in R[x, y]$ be of the form
+        $$@ f(x, y) = sum over k from a to b; ck xuub+a-k yuuk$$
+        where $@ 0 leq a < b$.
+        "
+    }
+    
+    supp S {
+        en="
+        Suppose the coefficients $@ck in R$ sum to zero,
+        i.e. $@sum over k from a to b; ck = 0$.
+        "
+    }
+    
+    asrt C {
+        en="
+        $@(x - y)$ divides $f(x, y)$ over $R[x, y]$, and the quotient is
+        $$@ q(x, y) = sum over k from a to b - 1; sk xuub-1+a-k yuuk,$$
+        where
+        $$@ sk = sum over j from a to k; cj $$
+        for $k$ from $a$ to $b - 1$.
+        "
+    }
+    
+    meson="
+    Let I. Suppose S. Then C.
+    "
+}
+
+deduc SuppPf_02 of SuppLem_ZB168_2.C {
+    
+    rels R10 {
+        
+        asrt A1 {
+            sy="$@(x - y) q(x, y) =
+            sum over k from a to b - 1; sk xuub+a-k yuuk - sum over k from a to b - 1; sk xuub-1+a-k yuuk+1 $"
+        }
+        
+        asrt A2 {
+            sy="$@=sum over k from a to b - 1; sk xuub+a-k yuuk - sum over k from a + 1 to b; sk-1 xuub+a-k yuuk$"
+        }
+        
+        asrt A3 {
+            sy="$@=sa xuub yuua + sum over k from a + 1 to b - 1; qnt sk - sk-1; xuub+a-k yuuk - sb-1 xuua yuub$"
+        }
+        
+        asrt A4 {
+            sy="$@= f(x, y)$"
+        }
+        
+    }
+    
+    asrt A20 {
+        sy="$@sa = ca$"
+    }
+    
+    asrt A30 {
+        en="
+        $@sk - sk-1 = ck$
+        for $k$ from $a + 1$ to $b - 1$
+        "
+    }
+    
+    asrt A40 {
+        sy="$@-sb-1 = cb$"
+    }
+    
+    meson="
+    SuppLem_ZB168_2.C by R10.
+    Have R10.A4 by A20 and A30 and A40.
+    Have A40 by SuppLem_ZB168_2.S.
+    "
+    
+}
+
+
+
+
+
+
+
+
+
