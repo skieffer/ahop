@@ -8,7 +8,7 @@
 ###############################################################################
 
 from gh.rrmath.lit.H.ilbert.ZB.Thm168 import Pf1A, Pf1C
-from .expand import SuppLem_ZB168_1, SuppPf_01, SuppLem_ZB168_2
+from ..expand import SuppLem_ZB168_1, SuppPf_01, SuppLem_ZB168_2
 
 ######################################################################
 # Expansions
