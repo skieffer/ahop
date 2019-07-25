@@ -30,16 +30,16 @@ The basic structure of <chart:w1>[Hilbert's proof]{
     "view":"ZB.Thm168.Pf"
 } is _mostly_ the same as <chart:w2>[Kummer's]{
     "view":"Cr040_08.Pf"
-}: the defining feature of the case split on divisibility by
-the ramified prime ($@1 - alp$ in Kummer; $@lam = 1 - zet$ in Hilbert)
+}. The proof's most basic feature, the case split on divisibility by
+the ramified prime ($@1 - alp$ in Kummer; $@lam = 1 - zet$ in Hilbert),
 is present in both.
 
 Meanwhile the most arresting _difference_ between the two ways of structuring
 the proof is in that Kummer <chart:w3>[immediately reduces]{
     "view":"Cr040_08.Pf.S50"
 } to the case in which the cyclotomic integers in the supposed solution are
-pairwise coprime, whereas Hilbert chooses to forego this reduction. Why?
-As we proceed, we'll be examining the differences this makes, and pursuing
-an answer as to why Hilbert made this choice.
+pairwise coprime, whereas Hilbert chooses to forgo this reduction. Why?
+As we proceed, we will be examining the differences this makes, and pursuing
+an answer as to why Hilbert might have made this choice.
 
 """
