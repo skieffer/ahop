@@ -1,0 +1,45 @@
+###############################################################################
+# This module belongs to Steve Kieffer's *MathNotes* Library.
+# It is licensed under the Creative Commons Attribution-ShareAlike 4.0
+# International License (CC BY-SA 4.0):
+#   https://creativecommons.org/licenses/by-sa/4.0/
+# Attribution may be made through hyperlink to the following URL:
+#   https://github.com/skieffer/mathnotes
+###############################################################################
+
+from .. import Cr040_06 
+import gh.rrmath.lit.K.ummer.Cr040_08 as Cr040_08
+import gh.rrmath.lit.H.ilbert.ZB as ZB
+
+anno KFLT_vs_HFLT """
+
+# Kummer vs. Hilbert on FLT for Regular Primes
+
+Kummer's proof of Fermat's Last Theorem for regular primes was published in 1850,
+appearing in the 40th volume of Crelle's Journal.
+The paper was the third of three papers by Kummer published in that volume,
+numbers 6 through 8. It was signed 19 June 1849, and in
+<notes:w4>[the introduction to paper number 6]{
+    "libpath":"Cr040_06.EngTrans"
+} Kummer indicated that...
+
+## Outer Structure
+
+The basic structure of <chart:w1>[Hilbert's proof]{
+    "group":"ZB",
+    "view":"ZB.Thm168.Pf"
+} is _mostly_ the same as <chart:w2>[Kummer's]{
+    "view":"Cr040_08.Pf"
+}: the defining feature of the case split on divisibility by
+the ramified prime ($@1 - alp$ in Kummer; $@lam = 1 - zet$ in Hilbert)
+is present in both.
+
+Meanwhile the most arresting _difference_ between the two ways of structuring
+the proof is in that Kummer <chart:w3>[immediately reduces]{
+    "view":"Cr040_08.Pf.S50"
+} to the case in which the cyclotomic integers in the supposed solution are
+pairwise coprime, whereas Hilbert chooses to forego this reduction. Why?
+As we proceed, we'll be examining the differences this makes, and pursuing
+an answer as to why Hilbert made this choice.
+
+"""
