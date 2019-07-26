@@ -1,8 +1,9 @@
-# MathNotes
+# Toward an Art History of Proofs...
 
 Welcome. This is a collection of [Proofscape](https://proofscape.org)
 modules I am writing on various historical mathematical works, such
-as Gauss's *Disquisitiones Arithmeticae*, and Hilbert's *Zahlbericht*.
+as Gauss's *Disquisitiones Arithmeticae*, Kummer's work on Fermat's
+Last Theorem, and Hilbert's *Zahlbericht*.
 
 For now it is a loose (and small, but growing) collection of
 translations, annotations, explanations, and example explorer widgets
@@ -10,7 +11,7 @@ translations, annotations, explanations, and example explorer widgets
 students of these classic works.
 
 Eventually, and with the collaboration of others, I would like to see
-these notes grow into the vision of an _"art history of proofs"_, as
+these notes grow into the vision of an _"Art History of Proofs"_, as
 discussed [here](https://royalroadmath.org/ahop.html).
 
 ## The Primary Sources
