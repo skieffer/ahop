@@ -11,6 +11,47 @@ from .. import Cr040_06
 import gh.rrmath.lit.K.ummer.Cr040_08 as Cr040_08
 import gh.rrmath.lit.H.ilbert.ZB as ZB
 
+anno Commentary """
+
+### Semiprimary Numbers
+
+Kummer did not use the term "semiprimary number".
+The notion, though unnamed, arises <chart:w3>[here]{
+    "view":"Cr040_08.Pf1.A30"
+}.
+
+Kummer is very terse here, giving no demonstration that such an $h$ can be
+found, dismissing the question with "as is easily shown" (_wie leicht zu zeigen_).
+
+Hilbert later would mostly "carry on the tradition" of dismissing this fact
+as being too easy to deserve much demonstration; Hilbert showed a few steps,
+but still left many steps to the reader. See our discussion of Hilbert's
+rendition <anno:w4>[here]{
+    "libpath":""
+}.
+
+
+In <chart:w1>[this step]{
+    "view":"Cr040_08.Pf1a.A20"
+}, we are using a very common maneuver. We have two numbers,
+$$@R = u + alpuur v$$
+$$@S = u + alpuus v$$
+with a common divisor, say $d | R$ and $d | S$, and we are using
+the fact that any linear combination of $R$ and $S$ must then also
+be divisible by $d$.
+
+The trick is to find the right coefficients for the linear combination.
+In order to obatin $@qnt alpuur - alpuus; v$ it is quite easy: this is
+just $R - S$.
+
+<qna:w2>[]{
+    "question": "How do you obtain $@qnt alpuur - alpuus; u$ as a linear combination of $R$ and $S$?",
+    "answer": "$@qnt alpuur - alpuus; u = alpuur S - alpuus R$"
+}
+
+
+"""
+
 anno H_vs_K_on_FLT """
 
 # Hilbert vs. Kummer on FLT for Regular Primes
