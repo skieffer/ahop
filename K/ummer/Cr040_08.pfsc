@@ -8,6 +8,7 @@
 ###############################################################################
 
 from .. import Cr040_06 
+from ....H.ilbert import ZB as ZB_notes
 import gh.rrmath.lit.K.ummer.Cr040_08 as Cr040_08
 import gh.rrmath.lit.H.ilbert.ZB as ZB
 
@@ -26,8 +27,8 @@ found, dismissing the question with "as is easily shown" (_wie leicht zu zeigen_
 Hilbert later would mostly "carry on the tradition" of dismissing this fact
 as being too easy to deserve much demonstration; Hilbert showed a few steps,
 but still left many steps to the reader. See our discussion of Hilbert's
-rendition <anno:w4>[here]{
-    "libpath":""
+rendition <notes:w4>[here]{
+    "libpath":"ZB_notes.Pg369_2.Notes"
 }.
 
 
@@ -41,7 +42,7 @@ the fact that any linear combination of $R$ and $S$ must then also
 be divisible by $d$.
 
 The trick is to find the right coefficients for the linear combination.
-In order to obatin $@qnt alpuur - alpuus; v$ it is quite easy: this is
+To obatin $@qnt alpuur - alpuus; v$ in this way is quite easy: this is
 just $R - S$.
 
 <qna:w2>[]{
