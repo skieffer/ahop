@@ -65,6 +65,33 @@ In the introduction to <notes:w4>[the first of these papers]{
 }, Kummer indicated that he had already communicated the basic ideas of the proof
 in a letter to Dirichlet, written some time before April 1847.
 
+## Differences to Watch
+
+### Symbol Use
+
+Whereas later authors often deliberately use the same symbols as their
+predecessors, there are also often exceptions. In the present case, the
+reader has to bear in mind the mapping,
+| Kummer | Hilbert |
+|:-------|:--------|
+| $@lam$ | $@ell$ |
+| $@alp$ | $@zeta$ |
+|        | $@lam = 1 - zeta$ |
+being especially careful with $@lam$. In Hilbert this is $@1 - zeta$;
+in Kummer, the corresponding number $@1 - alp$ has no name, whereas
+for Kummer $@lam$ is the rational prime in question.
+
+### "Actual" vs "Principal"
+
+Kummer didn't yet have the notion of "principal ideals". For Kummer, complex numbers
+were either "ideal" or "actual".
+
+### Semiprimary
+
+Kummer used the very same notion of semiprimary number that appears in Hilbert,
+but he did not use this, or any other, name for the concept.
+
+
 ## Outer Structure
 
 The basic structure of <chart:w1>[Hilbert's proof]{
