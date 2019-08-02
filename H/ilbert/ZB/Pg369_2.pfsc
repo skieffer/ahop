@@ -1,6 +1,6 @@
 
 import gh.rrmath.lit.H.ilbert.ZB as ZB
-import gh.skieffer.mathnotes.H.ilbert.ZB as ZBnotes
+import .. as ZBnotes
 
 deduc Lem1 {
     asrt C {
