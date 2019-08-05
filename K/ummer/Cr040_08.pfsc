@@ -111,4 +111,32 @@ pairwise coprime, whereas Hilbert chooses to forgo this reduction. Why?
 As we proceed, we will be examining the differences this makes, and pursuing
 an answer as to why Hilbert might have made this choice.
 
+### Kummer
+
+Before getting to <chart:w5>[the proof proper]{
+    "view":["Cr040_08.Thm", "Cr040_08.Pf"],
+    "selection":[
+        "Cr040_08.Pf.S40", "Cr040_08.Pf.S50",
+        "Cr040_08.Pf.Cs1", "Cr040_08.Pf.Cs2", "Cr040_08.Pf.F"
+    ]
+}, Kummer begins by bringing in <chart:w6>[those results]{
+    "view":["Cr040_08.Thm", "Cr040_08.Pf"],
+    "selection":[
+        "Cr040_08.Pf.A30", "Cr040_08.Pf.A10", "Cr040_08.Pf.A20",
+        "Cr040_08.Pf.Cr035_16.Pg356_18.Thm",
+        "Cr040_08.Pf.Cr040_07.Pg127_30",
+        "Cr040_08.Pf.Cr040_07.Pg128_26"
+    ]
+} from prior works that he will need. He does not begin to use any of these, however,
+until he gets into <chart:w7>[the two main cases]{
+    "view":["Cr040_08.Thm", "Cr040_08.Pf"],
+    "selection":[
+        "Cr040_08.Pf.Cs1", "Cr040_08.Pf.Cs2"
+    ]
+}.
+
+Let's take a look at <chart:w8>[Case 1]{
+    "view":"Cr040_08.Pf1"
+}.
+
 """
