@@ -242,12 +242,13 @@ This leaves the other question, of how we get <chart:w50>[the claimed congruence
     "view": "Pf1A.A20"
 }.
 
-Sanity Check: It's not just a simple rule of congruences, is it?
-Given $@a equiv b mod m$, and an integer $@n geq 2$, do we in general have
-$@a^n equiv b^n mod m^n$?
-
-Answer: No. For example, $@4 equiv 1 mod 3$,
-but $@4 squ not equiv 1 squ mod 3 squ$.
+<qna:w5>[Sanity Check:]{
+    "question": "It's not just a simple rule of congruences, is it?
+    Given $@a equiv b mod m$, and an integer $@n geq 2$, do we in general have
+    $@a^n equiv b^n mod m^n$?",
+    "answer": "No. For example, $@4 equiv 1 mod 3$,
+    but $@4 squ not equiv 1 squ mod 3 squ$."
+}
 
 Since we only need to make this inference for the cases $@ell = 3$ and $@ell = 5$,
 we could simply check these two cases and move on.

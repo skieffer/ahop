@@ -45,8 +45,9 @@ The trick is to find the right coefficients for the linear combination.
 To obatin $@qnt alpuur - alpuus; v$ in this way is quite easy: this is
 just $R - S$.
 
-<qna:w2>[]{
-    "question": "How do you obtain $@qnt alpuur - alpuus; u$ as a linear combination of $R$ and $S$?",
+<qna:w2>[Question:]{
+    "question": "How do you obtain $@qnt alpuur - alpuus; u$ as a linear
+                 combination of $R$ and $S$?",
     "answer": "$@qnt alpuur - alpuus; u = alpuur S - alpuus R$"
 }
 
@@ -114,25 +115,25 @@ an answer as to why Hilbert might have made this choice.
 ### Kummer
 
 Before getting to <chart:w5>[the proof proper]{
-    "view":["Cr040_08.Thm", "Cr040_08.Pf"],
-    "selection":[
-        "Cr040_08.Pf.S40", "Cr040_08.Pf.S50",
-        "Cr040_08.Pf.Cs1", "Cr040_08.Pf.Cs2", "Cr040_08.Pf.F"
-    ]
+    "view":"Cr040_08.{Thm,Pf}",
+    "color":{
+        ":olB":"Cr040_08.Pf.{S40,S50,Cs1,Cs2,F}"
+    }
 }, Kummer begins by bringing in <chart:w6>[those results]{
-    "view":["Cr040_08.Thm", "Cr040_08.Pf"],
-    "selection":[
-        "Cr040_08.Pf.A30", "Cr040_08.Pf.A10", "Cr040_08.Pf.A20",
-        "Cr040_08.Pf.Cr035_16.Pg356_18.Thm",
-        "Cr040_08.Pf.Cr040_07.Pg127_30",
-        "Cr040_08.Pf.Cr040_07.Pg128_26"
-    ]
+    "view":"Cr040_08.{Thm,Pf}",
+    "color":{
+        ":olG":[
+            "Cr040_08.Pf.{A10,A20,A30}",
+            "Cr040_08.Pf.Cr035_16.Pg356_18.Thm",
+            "Cr040_08.Pf.Cr040_07.{Pg127_30,Pg128_26}"
+        ]
+    }
 } from prior works that he will need. He does not begin to use any of these, however,
 until he gets into <chart:w7>[the two main cases]{
-    "view":["Cr040_08.Thm", "Cr040_08.Pf"],
-    "selection":[
-        "Cr040_08.Pf.Cs1", "Cr040_08.Pf.Cs2"
-    ]
+    "view":"Cr040_08.{Thm,Pf}",
+    "color":{
+        ":olY":"Cr040_08.Pf.{Cs1,Cs2}"
+    }
 }.
 
 Let's take a look at <chart:w8>[Case 1]{
