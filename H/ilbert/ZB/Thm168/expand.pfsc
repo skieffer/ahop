@@ -87,40 +87,26 @@ deduc SuppPf_01 of SuppLem_ZB168_1.C {
 
 deduc SuppPf_01_c of SuppPf_01.A80 {
     
-    rels R10 {
-        
-        asrt A1 {
-            sy="
-            $$@frac F(x, y) over x - y; = (x - y) sup ell - 1; -
-                sum over k from 0 to ell - 1; xuuell-1-k yuuk$$
-            "
-        }
-        
-        asrt A2 {
-            sy="$@ in bbZ[x, y]$"
-        }
-    }
-    
-    asrt A20 {
-        sy = "$$@frac F(x, tau) over x - tau; in calO[x]$$"
-    }
-    
     intr I25 {
         en="Let $@f(x) = F(x, tau) in calO[x]$"
     }
     
     asrt A30 {
         en="
-        $@tau$ is a root of $f(x)$
+        $@tau$ is a zero of $f(x)$
         "
     }
     
     intr I40 {
-        en="Let $@g(x) = G(x, tau) in calO[x]$"
+        en="Let $@g(x) = G(x, tau)$"
+    }
+    
+    asrt A41 {
+        sy="$@g(x) in calO[x]$"
     }
     
     asrt A50 {
-        en="$g$ has the same zeros over $@calO$ as $f$"
+        en="$g$ has the same zeros as $f$ over $@calO$"
     }
     
     asrt A60 {
@@ -144,12 +130,10 @@ deduc SuppPf_01_c of SuppPf_01.A80 {
     }
     
     meson = "
-    From SuppPf_01.I30 get R10.
-    From R10.A2, get A20.
     Let I25.
-    Then A30 by A20.
-    Let I40.
-    A50.
+    Then A30 by SuppPf_01.I30.
+    Let I40. Then A41, using SuppPf_01.A50.
+    A50 by SuppPf_01.I40.
     Then A60, by A30.
     Therefore E70, so A80, hence SuppPf_01.A80.
     "
