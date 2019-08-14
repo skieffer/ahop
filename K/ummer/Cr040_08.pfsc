@@ -73,11 +73,13 @@ in a letter to Dirichlet, written some time before April 1847.
 Whereas later authors often deliberately use the same symbols as their
 predecessors, there are also often exceptions. In the present case, the
 reader has to bear in mind the mapping,
+
 | Kummer | Hilbert |
 |:-------|:--------|
 | $@lam$ | $@ell$ |
 | $@alp$ | $@zeta$ |
 |        | $@lam = 1 - zeta$ |
+
 being especially careful with $@lam$. In Hilbert this is $@1 - zeta$;
 in Kummer, the corresponding number $@1 - alp$ has no name, whereas
 for Kummer $@lam$ is the rational prime in question.
@@ -115,12 +117,16 @@ an answer as to why Hilbert might have made this choice.
 ### Kummer
 
 Before getting to <chart:w5>[the proof proper]{
-    "view":"Cr040_08.{Thm,Pf}",
+    "view":"Cr040_08.Pf.{S40,S50,Cs1,Cs2,F}",
     "color":{
         ":olB":"Cr040_08.Pf.{S40,S50,Cs1,Cs2,F}"
     }
 }, Kummer begins by bringing in <chart:w6>[those results]{
-    "view":"Cr040_08.{Thm,Pf}",
+    "view":[
+        "Cr040_08.Pf.{A10,A20,A30}",
+        "Cr040_08.Pf.Cr035_16.Pg356_18.Thm",
+        "Cr040_08.Pf.Cr040_07.{Pg127_30,Pg128_26}"
+    ],
     "color":{
         ":olG":[
             "Cr040_08.Pf.{A10,A20,A30}",
@@ -130,7 +136,7 @@ Before getting to <chart:w5>[the proof proper]{
     }
 } from prior works that he will need. He does not begin to use any of these, however,
 until he gets into <chart:w7>[the two main cases]{
-    "view":"Cr040_08.{Thm,Pf}",
+    "view":"Cr040_08.Pf.{Cs1,Cs2}",
     "color":{
         ":olY":"Cr040_08.Pf.{Cs1,Cs2}"
     }
