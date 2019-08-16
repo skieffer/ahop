@@ -77,10 +77,6 @@ First let's consider <chart:w13>[the more conceptual approach]{
     "view":"expand.SuppPf_01_c",
     "group": "extras"
 }.
-Here we begin with <chart:w14>[the easy observation]{
-    "view":"expand.SuppPf_01_c.R10",
-    "group": "extras"
-} that $(x - y)$ divides evenly into $F(x, y)$.
 
 ...
 
