@@ -94,6 +94,29 @@ were either "ideal" or "actual".
 Kummer used the very same notion of semiprimary number that appears in Hilbert,
 but he did not use this, or any other, name for the concept.
 
+## Theorem Statement
+
+Hilbert <chart:w9>[states the theorem]{
+    "view":"ZB.Thm168.Thm"
+} in terms of regular primes. This may be compared with
+<chart:w10>[Kummer's presentation]{
+
+}, in which Kummer presented the theorem in terms of Bernoulli numbers instead.
+The underlying mathematics is the same; it is only a question of the manner of
+presentation.
+
+It is easy to offer a possible explanation: in 1850, Kummer would
+have been motivated to publish a result that could be expressed entirely in
+terms of concepts that were already well known at that time. In other words,
+a theorem relating the Fermat equaion to the well-known Bernoulli numbers would
+sound a lot more impressive than one relating the equation to some new concept
+which Kummer himself had just invented. Presented with the latter, the community
+at the time would have been justified in wondering, "So what?"
+
+By contrast, by the time of Hilbert's *Zahlbericht* it was clear that regular
+primes were something worth knowing about, so it made sense for Hilbert to
+state Theorem 168 in terms of them. As for the relation between regular primes
+and Bernoulli numbers, in the *Zahlbericht* this appears in Theorem ---.
 
 ## Outer Structure
 
