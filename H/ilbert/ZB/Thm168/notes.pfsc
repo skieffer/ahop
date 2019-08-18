@@ -153,18 +153,21 @@ $5$, none is zero mod $25$.
 The major chunks of this long argument are as follows:
 
 <chart:w19>[Chunk 1:]{
-    "view":"Thm168.Pf1C.{D20,ZBPg369_2,A10}"
+    "view":"Thm168.Pf1C.{D20,ZBPg369_2,A10}",
+    "hovercolor":{":bgY":"Thm168.Pf1C.{D20,ZBPg369_2,A10}"}
 } Assume _wolog_ that the numbers $@alp, bet, gam$ are semiprimary.
 
 <chart:w21>[Chunk 2:]{
-    "view":"Thm168.Pf1C.{A30,I60,D50,D40,E70}"
+    "view":"Thm168.Pf1C.{A30,I60,D50,D40,E70}",
+    "hovercolor":{":bgY":"Thm168.Pf1C.{A30,I60,D50,D40,E70}"}
 } Bring $@gam$ to the RHS of the Fermat equation, and
 factorize the LHS into factors of the form $@alp + zeta^u beta$. Then examine the possible
 common divisors of these factors, in order to deduce
 the general form of the _ideal_ factorization of each number $@alp + zeta^u beta$.
 
 <chart:w22>[Chunk 3:]{
-    "view":"Thm168.Pf1C.{I100,A110,A130}"
+    "view":"Thm168.Pf1C.{I100,A110,A130}",
+    "hovercolor":{":bgY":"Thm168.Pf1C.{I100,A110,A130}"}
 } In a sense, "normalize" the factors of the LHS, by passing now to
 the _ratios_ $@mew + zeta^u rho$ of each $@alp + zeta^u beta$ to the last
 factor ($@alp + zeta^{ell - 1} beta$),
@@ -172,36 +175,44 @@ and thereby cancelling the part of their ideal factorizations that is
 not an $@ell eth$ power.
 
 <chart:w23>[Chunk 4:]{
-    "view":"Thm168.Pf1C.{I140,A150,A120,A160,ZB127,E170}"
+    "view":"Thm168.Pf1C.{I140,A150,A120,A160,ZB127,E170}",
+    "hovercolor":{":bgY":"Thm168.Pf1C.{I140,A150,A120,A160,ZB127,E170}"}
 } This is the key step where regularity of the prime $@ell$ is used.
 It allows us to pass from
 <chart:w24>[the $@ell eth$ powers of certain fractional ideals being principal]{
-    "color":{":update":true, ":bgG":"Thm168.Pf1C.A120"}
+    "hovercolor":{":bgG":"Thm168.Pf1C.A120"}
 } to
 <chart:w25>[_those ideals themselves_ being principal]{
-    "color":{":bgG":"Thm168.Pf1C.A160"}
+    "hovercolor":{":bgG":"Thm168.Pf1C.A160"}
 }. From this we can then deduce that each ratio $@mew + zeta^u rho$ has
-a simple form, as a unit times an $@ell eth$ power of an _element_ $@alpu$
-of the number field.
+<chart:w31>[a simple form]{
+    "hovercolor":{":bgG":"Thm168.Pf1C.E170.A5"}
+}, as a unit times an $@ell eth$ power of <chart:w32>[an _element_]{
+    "hovercolor":{":bgG":"Thm168.Pf1C.E170.I3"}
+} $@alpu$ of the number field.
 
 <chart:w26>[Chunk 5:]{
-    "view":"Thm168.Pf1C.{E180,A190,I200,M210,A220,A230}"
+    "view":"Thm168.Pf1C.{E180,A190,I200,M210,A220,A230}",
+    "hovercolor":{":bgY":"Thm168.Pf1C.{E180,A190,I200,M210,A220,A230}"}
 } Pass to congruences mod $@frl^ell$.
 
 <chart:w27>[Chunk 6:]{
-    "view":"Thm168.Pf1C.{A280,A260,A250,A270,A290}"
+    "view":"Thm168.Pf1C.{A280,A260,A250,A270,A290}",
+    "hovercolor":{":bgY":"Thm168.Pf1C.{A280,A260,A250,A270,A290}"}
 } Determine the powers of $@zeta$ appearing in these congruences.
 
 <chart:w28>[Chunk 7:]{
-    "view":"Thm168.Pf1C.{M300,A310,A320}"
+    "view":"Thm168.Pf1C.{M300,A310,A320}",
+    "hovercolor":{":bgY":"Thm168.Pf1C.{M300,A310,A320}"}
 } The final drive toward a contradiction: Pick four of the congruences
 mod $@frl^ell$ and, treating them as a linear system, deduce a congruence
 on a 4x4 Vandermonde determinant involving only powers of $@zeta$.
 
 <chart:w29>[Chunk 8:]{
-    "view":"Thm168.Pf1C.D330"
+    "view":"Thm168.Pf1C.D330",
+    "hovercolor":{":bgY":"Thm168.Pf1C.D330"}
 } Confirm that in fact the determinant congruence is impossible.
-This is the contradiction that completes the Case 1C.
+This is the contradiction that completes Case 1C.
 
 
 ### The need for the case split on $@ell$
