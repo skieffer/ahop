@@ -1,0 +1,12 @@
+
+from gh.rrmath.lit.G.alois import M1
+
+# Modernized versions of the proofs in Galois' memoir
+
+deduc Pf3 of M1.Lem3.C {
+    
+    meson="
+    !
+    M1.Lem3.C
+    "
+}

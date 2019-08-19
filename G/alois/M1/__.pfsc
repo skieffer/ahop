@@ -1,0 +1,31 @@
+
+from gh.rrmath.lit.G.alois import M1
+from .modpfs import Pf3
+
+anno Commentary """
+
+# Commentary on the first memoir of Galois
+
+## Lemma 3
+
+<chart:w1>[The proof of Lemma 3]{
+    "view":"M1.Pf3"
+} is difficult because the quantities involved are sometimes
+treated as constants, sometimes as variables. Galois did not make a strict
+distinction between the two, as we would today.
+
+Also, as is characteristic of older mathematical writing, some entities are never
+given names, but are referred to throughout the proof with phrases like,
+"the given equation." This leaves readers with more ambiguities to resolve
+for themselves.
+
+We give a modernized version of the same proof here, and use this to help us
+explain each of the steps in Galois' rendition.
+
+### Modernized proof
+
+<chart:w2>[Our version of the proof]{
+    "view":"Pf3"
+} begins with....
+
+"""
