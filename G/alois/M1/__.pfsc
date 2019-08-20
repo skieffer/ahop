@@ -1,6 +1,6 @@
 
 from gh.rrmath.lit.G.alois import M1
-from .modpfs import Pf3
+import .modpfs as modpfs
 
 anno Commentary """
 
@@ -22,10 +22,19 @@ for themselves.
 We give a modernized version of the same proof here, and use this to help us
 explain each of the steps in Galois' rendition.
 
-### Modernized proof
+### Modernized version
 
-<chart:w2>[Our version of the proof]{
-    "view":"Pf3"
-} begins with....
+Before we can give a modernized proof,
+we actually need to restate the theorem itself, bringing in the language of functions.
+<chart:w3>[Our version]{
+    "group":"modern",
+    "view":"modpfs.Lem3"
+} gives the name $h(y)$ to the equation in question, whose roots are $@a, b, c, d, ddd$.
+
+Likewise, <chart:w2>[our version of the proof]{
+    "group":"modern",
+    "view":"modpfs.Pf3"
+} introduces several functions, in order to help is keep clear on what is constant
+and what is variable.
 
 """
