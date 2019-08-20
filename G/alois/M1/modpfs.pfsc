@@ -1,12 +1,144 @@
 
 from gh.rrmath.lit.G.alois import M1
 
-# Modernized versions of the proofs in Galois' memoir
+# Modernized versions of the proofs in Galois' first memoir
 
-deduc Pf3 of M1.Lem3.C {
+deduc Lem3 {
+    
+    intr I1 {
+        en="
+        Let an equation $h(y) = 0$ with distinct roots
+        $@a, b, c, d, ddd$ be given.
+        "
+    }
+    
+    intr I2 {
+        en="
+        Let $@V = vph(a, b, c, d, ddd)$ be as in Lemma 2.
+        "
+    }
+    
+    asrt C {
+        en="
+        Each of the roots $@a, b, c, d, ddd$ can be expressed
+        as a rational function of $V$.
+        "
+    }
+    
+    meson="Let I1. Let I2. Then C."
+}
+
+deduc Pf3 of Lem3.C {
+    
+    intr I10 {
+        en="
+        Form the function
+          $@f(x) = bqnt x - vph(a, b, c, d, ddd); bqnt x - vph(a, c, b, d, ddd);
+           bqnt x - vph(a, b, d, c, ddd); ccc$
+        where the product ranges over all those permutations of the roots that hold $a$ fixed.
+        "
+    }
+    
+    asrt A20 {
+        en="
+        The coefficients of $f(x)$ are symmetrical in $@b, c, d, ddd$.
+        "
+    }
+    
+    asrt A30 {
+        en="
+        The coefficients of $f(x)$ can be written as rational functions in $a$.
+        "
+    }
+    
+    exin E40 {
+        en="There are % such that"
+        intr I1 {
+            en="
+            rational functions $@c1(y), c2(y), ddd$
+            "
+        }
+        intr I2 {
+            en="
+            and a bivariate function
+                $@F(x, y) = x^m + c1(y) xuum-1 + c2(y) xuum-2 + ccc$
+            "
+        }
+        asrt A {
+            sy="$@F(x, a) = f(x)$"
+        }
+    }
+    
+    asrt A45 {
+        sy="$@F(V, a) = 0$"
+    }
+    
+    intr I50 {
+        en="
+        Use the Euclidean Algorithm to compute
+        the GCD $g(y)$ of $F(V, y)$ and $h(y)$.
+        "
+    }
+    
+    asrt A60 {
+        sy="$@g(y) = y - a$"
+    }
+    
+    subdeduc D70 {
+        
+        supp S10 {
+            en="
+            Suppose $@F(V, y)$ and $h(y)$ had any other
+            common solution, say $b$, besides $a$.
+            "
+        }
+        
+        asrt A20 {
+            sy="$@F(V, b) = 0$"
+        }
+        
+        asrt A30 {
+            en="
+            The functions $F(x, a)$ and $F(x, b)$ have a common
+            root at $V$, so their GCD has positive degree.
+            "
+        }
+        
+        # ...?
+        
+        asrt A1000 {
+            en="
+            One of the functions $@vph(a, ddd)$ must equal
+            one of the functions $@vph(b, ddd)$.
+            "
+        }
+        
+        flse F2000 contra S10 {}
+        
+        meson="
+        Suppose S10. Then A20, so A30.
+        !
+        A1000, hence F2000, by Lem3.I2.
+        "
+    }
+    
+    asrt A80 {
+        en="
+        The coefficients of $g(y)$ are
+        rational functions in $V$.
+        "
+    }
+    
+    asrt A90 {
+        en="
+        $a$ is expressible as a
+        rational function in $V$.
+        "
+    }
     
     meson="
-    !
-    M1.Lem3.C
+    Let I10. Then A20, so A30. Therefore E40, so A45.
+    Now let I50. Then A60, by A45 and D70.
+    Therefore A90 by A80 by I50, hence Lem3.C.
     "
 }
