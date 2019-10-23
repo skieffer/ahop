@@ -20,10 +20,9 @@ anno Walkthrough """
 
 #### Notes by Steve Kieffer
 
-In Theorem 168, the next-to-last result in the *Zahlbericht*, Hilbert presents
-Kummer's proof of Fermat's Last Theorem for regular primes, in somewhat
-modified form. We have
-<notes:w6>[discussed Kummer's original proof]{
+In Theorem 168, the next-to-last result in the *Zahlbericht*, Hilbert gives
+a modified version of Kummer's proof of Fermat's Last Theorem for regular primes.
+We have <notes:w6>[discussed Kummer's original proof]{
     "libpath":"ahop.K.ummer.Cr040_08.Commentary"
 } elsewhere, and have also
 <notes:w7>[compared Kummer's and Hilbert's versions]{

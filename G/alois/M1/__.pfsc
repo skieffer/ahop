@@ -34,7 +34,7 @@ we actually need to restate the theorem itself, bringing in the language of func
 Likewise, <chart:w2>[our version of the proof]{
     "group":"modern",
     "view":"modpfs.Pf3"
-} introduces several functions, in order to help is keep clear on what is constant
+} introduces several functions, in order to help us keep clear on what is constant
 and what is variable.
 
 """
