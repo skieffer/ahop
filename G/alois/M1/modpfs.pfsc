@@ -142,3 +142,41 @@ deduc Pf3 of Lem3.C {
     Therefore A90 by A80 by I50, hence Lem3.C.
     "
 }
+
+deduc x1 of Pf3.A30 {
+    
+    intr I10 {
+        en="
+        Consider $h(y)$ as a polynomial over $@bbQ(a)$,
+        and compute the quotient $@q(y) in bbQ(a)$ satisfying
+                 $h(y) = (y - a)q(y)$
+        using the division algorithm.
+        "
+    }
+    
+    asrt A20 {
+        en="
+        The roots of $q(y)$ are precisely
+        $@b, c, d, ddd$.
+        "
+    }
+    
+    asrt A30 {
+        en="
+        The coefficients of $q(y)$ are the elementary
+        symmetric functions in $@b, c, d, ddd$.
+        "
+    }
+    
+    asrt A40 {
+        en="
+        The coefficients of $q(y)$ are rational
+        functions in $a$.
+        "
+    }
+    
+    meson="
+    Let I10. Then A20, so A30. But A40 by I10.
+    Therefore Pf3.A30, using Pf3.A20 and A30.
+    "
+}
