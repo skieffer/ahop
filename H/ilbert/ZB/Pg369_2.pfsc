@@ -1,64 +1,23 @@
+# --------------------------------------------------------------------------- #
+# AHOP: an arithmetical house of pancakes                                     #
+# Copyright (c) 2018-2022 Steve Kieffer                                       #
+#                                                                             #
+# This Source Code Form is subject to the terms of the Mozilla Public         #
+# License, v. 2.0. If a copy of the MPL was not distributed with this         #
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.                    #
+# --------------------------------------------------------------------------- #
 
-import gh.rrmath.lit.H.ilbert.ZB as ZB
-import .. as ZBnotes
+import gh.alpinemath.histarch.H.ilbert.ZB as ZB
+import gh.alpinemath.ex.H.ilbert.ZB as ZB_ex
 
-deduc Lem1 {
-    asrt C {
-        en="
-        For any $@r in bbZ$,
-            $@zetuur lam equiv lam mod lam squ$.
-        "
-    }
-    meson="C."
-}
 
-deduc Pf1 of Lem1.C {
-    rels R {
-        asrt A10 {
-            sy="$@lam - lam zetuur = lam qnt 1 - zetuur;$"
-        }
-        asrt A20 {
-            sy="$@= vep lam squ$ where $@vep in bbZ[zet]$ is a unit"
-        }
-        asrt A30 {
-            sy="$@equiv 0 mod lam squ$"
-        }
-    }
-    meson="
-    Lem1.C by R.
-    Meanwhile, R.A20 by ZB.Thm117.Pf.A9.
-    "
-}
-
-deduc Exp1 of ZB.Pg369_2.Pf.A30 {
-    
-    rels R10 {
-        asrt A10 {
-            sy="$@zet sup b star; alp equiv a zet sup b star; +
-                    b zet sup b star; lam mod frl squ$"
-        }
-        asrt A20 {
-            sy="$@equiv a qnt 1 - b star lam; + b lam mod frl squ$"
-        }
-        asrt A30 {
-            sy="$@equiv a - b lam + b lam mod frl squ$"
-        }
-        asrt A40 {
-            sy="$@equiv a mod frl squ$"
-        }
-    }
-    
-    meson="
-    ZB.Pg369_2.Pf.A30 by R10.
-    Meanwhile, R10.A10 by ZB.Pg369_2.Pf.I10.
-    Meanwhile, R10.A20 by ZB.Lem18.Pf.A40 and Lem1.
-    Meanwhile, R10.A30 by ZB.Pg369_2.Pf.E20.A.
-    "
-}
-
-anno Notes """
+anno Notes @@@
 
 # Semiprimary Numbers
+
+...under construction...
+
+...
 
 Question: Why are we justified in <chart:w1>[defining $@b star$ as we do]{
     "view":"ZB.Pg369_2.Pf.E20"
@@ -97,8 +56,8 @@ It arises <chart:w3>[in the proof of Lemma 18]{
 The proof is not difficult, and relies on a key idea which we use frequently
 in the arithmetic of cyclotomic fields; namely, the idea of switching back
 and forth between working in terms of $@zet$, and working in terms of $@lam$.
-See <chart:w4>[our expansion]{
-    "view":"ZBnotes.Lem18.Exp1"
+See <chart:w4>[this expansion]{
+    "view":"ZB_ex.Lem18.X1"
 } for the easy derivation.
 
 Using this idea, we can now get back to
@@ -106,8 +65,7 @@ Using this idea, we can now get back to
     "view":"ZB.Pg369_2.Pf.A30"
 } via multiplication by a suitable root of unity.
 Let's <chart:w5>[fill in the steps]{
-    "view":"Exp1"
+    "view":"ZB_ex.Pg369_2.X1"
 }.
 
-
-"""
+@@@

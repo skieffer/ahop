@@ -1,5 +1,13 @@
+# --------------------------------------------------------------------------- #
+# AHOP: an arithmetical house of pancakes                                     #
+# Copyright (c) 2018-2022 Steve Kieffer                                       #
+#                                                                             #
+# This Source Code Form is subject to the terms of the Mozilla Public         #
+# License, v. 2.0. If a copy of the MPL was not distributed with this         #
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.                    #
+# --------------------------------------------------------------------------- #
 
-from gh.rrmath.lit.G.alois import M1
+from gh.alpinemath.histarch.G.alois import M1
 
 # Modernized versions of the proofs in Galois' first memoir
 
@@ -51,7 +59,7 @@ deduc Pf3 of Lem3.C {
         "
     }
     
-    exin E40 {
+    exis E40 {
         en="There are % such that"
         intr I1 {
             en="

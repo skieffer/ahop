@@ -1,17 +1,17 @@
-###############################################################################
-# This module belongs to Steve Kieffer's *Art History of Proofs* Library.
-# It is licensed under the Creative Commons Attribution-ShareAlike 4.0
-# International License (CC BY-SA 4.0):
-#   https://creativecommons.org/licenses/by-sa/4.0/
-# Attribution may be made through hyperlink to the following URL:
-#   https://github.com/skieffer/ahop
-###############################################################################
+# --------------------------------------------------------------------------- #
+# AHOP: an arithmetical house of pancakes                                     #
+# Copyright (c) 2018-2022 Steve Kieffer                                       #
+#                                                                             #
+# This Source Code Form is subject to the terms of the Mozilla Public         #
+# License, v. 2.0. If a copy of the MPL was not distributed with this         #
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.                    #
+# --------------------------------------------------------------------------- #
 
-anno Notes """
+anno Notes @@@
 
 The key point in this proof is the statement that the congruence $@x^d equiv
 1$ mod $p$ cannot have more than $d$ distinct roots. Gauss establishes this fact
-of congruences in Art. 43, and then in Art. 44 attributes the result (about
+about congruences in Art. 43, and then in Art. 44 attributes the result (about
 congruences only; not about primitive roots) to a 1768 work of Lagrange.
 
 To support my claim that this fact about congruences is the single, key idea in
@@ -33,25 +33,25 @@ This is where we are going to argue that in fact there cannot be any
 _other_ elements of order $d$ outside the subgroup $H$.
 This is the crucial fact that allows us to derive that $G$ is in fact cyclic.
 It is the _limitation_ on the number of elements of order $d$ that can
-possibly be present. The whole proof comes down to putting this _upper bound_
+possibly be present that matters. The whole proof comes down to putting this _upper bound_
 of $@phi(d)$ on the number of elements of order $d$.
 
 And the way we get this upper bound is through the theory of equations (or
-congruences). When $@G = (bbZ/p bbZ) sup times;$, we recall that
+congruences over a field in this case). When $@G = (bbZ/p bbZ) sup times;$, we recall that
 $@bbZ/p bbZ$ is a field, so we can think about polynomials in $@(bbZ/p bbZ)[x]$.
 In particular, in $H$ we already have $d$ roots mod $p$ of the polynomial
 $x^d - 1$ of degree $d$, and so there can be no more roots besides these in
 the entire field.
 
 From there the remainder of the proof is simply in applying the classic trick
-of Art. 54. If $@psi(d)$ is the number of elements of $G$ of order $d$,
+of Art. 54. If $@psi(d)$ is the number of elements in $G$ of order $d$,
 then we have shown that $@psi(d)$ is either equal to $0$ or equal to $@phi(d)$.
 Then we consider that the sum over $d$ dividing $n$ of $@psi(d)$, and the sum
 over the same range of $@phi(d)$ are both equal to $n$ (for $@psi$ this is
 because of Lagrange's Theorem, i.e. that every element in $G$ must be of some
 order $d$ dividing $n$; for $@phi$ it is a classic result about the $@phi$
-function, established in Art. 39). But because we know $@psi(d) leq phi(d)$
-for all $d$, the sums can be equal only if in fact $@psi(d) = phi(d)$ for all $d$,
-and we're done.
+function, established in Art. 39). But because we know $0 leq psi(d) leq phi(d)@$
+for all $d$, the sums can be equal only if in fact equality holds for each $d$,
+i.e. $@psi(d) = phi(d)$ for all $d$. And with that the proof is done.
 
-"""
+@@@

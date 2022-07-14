@@ -1,8 +1,16 @@
+# --------------------------------------------------------------------------- #
+# AHOP: an arithmetical house of pancakes                                     #
+# Copyright (c) 2018-2022 Steve Kieffer                                       #
+#                                                                             #
+# This Source Code Form is subject to the terms of the Mozilla Public         #
+# License, v. 2.0. If a copy of the MPL was not distributed with this         #
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.                    #
+# --------------------------------------------------------------------------- #
 
-from gh.rrmath.lit.G.alois import M1
+from gh.alpinemath.histarch.G.alois import M1
 import .modpfs as modpfs
 
-anno Commentary """
+anno Commentary @@@
 
 # Commentary on the first memoir of Galois
 
@@ -37,4 +45,4 @@ Likewise, <chart:w2>[our version of the proof]{
 } introduces several functions, in order to help us keep clear on what is constant
 and what is variable.
 
-"""
+@@@

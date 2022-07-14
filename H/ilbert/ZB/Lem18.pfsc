@@ -1,24 +1,15 @@
+# --------------------------------------------------------------------------- #
+# AHOP: an arithmetical house of pancakes                                     #
+# Copyright (c) 2018-2022 Steve Kieffer                                       #
+#                                                                             #
+# This Source Code Form is subject to the terms of the Mozilla Public         #
+# License, v. 2.0. If a copy of the MPL was not distributed with this         #
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.                    #
+# --------------------------------------------------------------------------- #
 
-import gh.rrmath.lit.H.ilbert.ZB.Lem18 as Lem18
+import gh.alpinemath.histarch.H.ilbert.ZB.Lem18 as Lem18
 
-deduc Exp1 of Lem18.Pf.A40 {
-    rels R10 {
-        asrt A10 {
-            sy="$@1 - zetuur = 1 - qnt 1 - lam; sup r;$"
-        }
-        asrt A20 {
-            en="$@= 1 - bqnt 1 - r lam + A lam squ;$ for some $@A in bbZ[zet]$"
-        }
-        asrt A30 {
-            sy="$@equiv r lam mod lam squ$"
-        }
-    }
-    meson="
-    Lem18.Pf.A40 by R10 and Lem18.Pf.I10.
-    "
-}
-
-anno Notes """
+anno Notes @@@
 
 It seems odd that Hilbert would make <chart:w1>[these two assertions]{
     "select":[
@@ -45,4 +36,4 @@ in isolation, it might make sense to add such a clarification.
 But, to the reader who is now in Section 103 of a treatise that
 has been all about ideals since Section 4, it must seem gratuitous.
 
-"""
+@@@

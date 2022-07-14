@@ -1,18 +1,18 @@
-###############################################################################
-# This module belongs to Steve Kieffer's *Art History of Proofs* Library.
-# It is licensed under the Creative Commons Attribution-ShareAlike 4.0
-# International License (CC BY-SA 4.0):
-#   https://creativecommons.org/licenses/by-sa/4.0/
-# Attribution may be made through hyperlink to the following URL:
-#   https://github.com/skieffer/ahop
-###############################################################################
+# --------------------------------------------------------------------------- #
+# AHOP: an arithmetical house of pancakes                                     #
+# Copyright (c) 2018-2022 Steve Kieffer                                       #
+#                                                                             #
+# This Source Code Form is subject to the terms of the Mozilla Public         #
+# License, v. 2.0. If a copy of the MPL was not distributed with this         #
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.                    #
+# --------------------------------------------------------------------------- #
 
-from .. import Cr040_06 
+from gh.alpinemath.en.K.ummer import Cr040_06 
 from ....H.ilbert import ZB as ZB_notes
-import gh.rrmath.lit.K.ummer.Cr040_08 as Cr040_08
-import gh.rrmath.lit.H.ilbert.ZB as ZB
+import gh.alpinemath.histarch.K.ummer.Cr040_08 as Cr040_08
+import gh.alpinemath.histarch.H.ilbert.ZB as ZB
 
-anno Commentary """
+anno Commentary @@@
 
 ### Semiprimary Numbers
 
@@ -24,11 +24,11 @@ The notion, though unnamed, arises <chart:w3>[here]{
 Kummer is very terse here, giving no demonstration that such an $h$ can be
 found, dismissing the question with "as is easily shown" (_wie leicht zu zeigen_).
 
-Hilbert later would mostly "carry on the tradition" of dismissing this fact
-as being too easy to deserve much demonstration; Hilbert showed a few steps,
+Hilbert too would later dismiss this fact
+as being too easy to deserve much demonstration. He showed a few steps,
 but still left many steps to the reader. See our discussion of Hilbert's
-rendition <notes:w4>[here]{
-    "libpath":"ZB_notes.Pg369_2.Notes"
+rendition <link:w4>[here]{
+    ref:"ZB_notes.Pg369_2.Notes"
 }.
 
 
@@ -42,7 +42,7 @@ the fact that any linear combination of $R$ and $S$ must then also
 be divisible by $d$.
 
 The trick is to find the right coefficients for the linear combination.
-To obatin $@qnt alpuur - alpuus; v$ in this way is quite easy: this is
+To obtain $@qnt alpuur - alpuus; v$ in this way is quite easy: this is
 just $R - S$.
 
 <qna:w2>[Question:]{
@@ -52,17 +52,17 @@ just $R - S$.
 }
 
 
-"""
+@@@
 
-anno H_vs_K_on_FLT """
+anno H_vs_K_on_FLT @@@
 
 # Hilbert vs. Kummer on FLT for Regular Primes
 
 Kummer's proof of Fermat's Last Theorem for regular primes was published in 1850,
 appearing in the 40th volume of Crelle's Journal.
 The paper was the third in a series of three papers published by Kummer in that volume.
-In the introduction to <notes:w4>[the first of these papers]{
-    "libpath":"Cr040_06.EngTrans"
+In the introduction to <link:w4>[the first of these papers]{
+    ref:"Cr040_06.en"
 }, Kummer indicated that he had already communicated the basic ideas of the proof
 in a letter to Dirichlet, written some time before April 1847.
 
@@ -92,50 +92,59 @@ were either "ideal" or "actual".
 ### Semiprimary
 
 Kummer used the very same notion of semiprimary number that appears in Hilbert,
-but he did not use this, or any other, name for the concept.
+but he did not use this, or any other, name for it.
 
 ## Theorem Statement
 
 Hilbert <chart:w9>[states the theorem]{
     "view":"ZB.Thm168.Thm"
-} in terms of regular primes. This may be compared with
-<chart:w10>[Kummer's presentation]{
+} in terms of regular primes. This may be compared with Kummer's original version,
+in which the theorem is instead stated
+<chart:w10>[in terms of Bernoulli numbers]{
+    "view":"Cr040_08.Thm.S"
+}.
 
-}, in which Kummer presented the theorem in terms of Bernoulli numbers instead.
-The underlying mathematics is the same; it is only a question of the manner of
-presentation.
-
-It is easy to offer a possible explanation: in 1850, Kummer would
+We can offer a possible explanation: in 1850, Kummer would
 have been motivated to publish a result that could be expressed entirely in
-terms of concepts that were already well known at that time. In other words,
-a theorem relating the Fermat equaion to the well-known Bernoulli numbers would
+terms of concepts that were already well known at that time.
+A theorem relating the Fermat equaion to the well-known Bernoulli numbers would
 sound a lot more impressive than one relating the equation to some new concept
 which Kummer himself had just invented. Presented with the latter, the community
-at the time would have been justified in wondering, "So what?"
+at the time might have been justified in wondering, "So what?"
 
 By contrast, by the time of Hilbert's *Zahlbericht* it was clear that regular
 primes were something worth knowing about, so it made sense for Hilbert to
-state Theorem 168 in terms of them. As for the relation between regular primes
-and Bernoulli numbers, in the *Zahlbericht* this appears in Theorem ---.
+state Theorem 168 in terms of them.
+
+As for the relation between regular primes and Bernoulli numbers, this appeared
+in another of Kummer's papers from volume 40 of Crelle, and later in Theorem 154
+of Hilbert's *Zahlbericht*.
 
 ## Outer Structure
 
-The basic structure of <chart:w1>[Hilbert's proof]{
+The structure of <chart:w1>[Hilbert's proof]{
     "group":"ZB",
     "view":"ZB.Thm168.Pf"
-} is _mostly_ the same as <chart:w2>[Kummer's]{
+} is mostly the same as <chart:w2>[Kummer's]{
     "view":"Cr040_08.Pf"
-}. The proof's most basic feature, the case split on divisibility by
+}. The proof's most basic feature, i.e. the case split on divisibility by
 the ramified prime ($@1 - alp$ in Kummer; $@lam = 1 - zet$ in Hilbert),
 is present in both.
 
-Meanwhile the most arresting _difference_ between the two ways of structuring
-the proof is in that Kummer <chart:w3>[immediately reduces]{
+Meanwhile there is an unfortunate error in Kummer's proof, where he
+<chart:w3>[immediately reduces]{
     "view":"Cr040_08.Pf.S50"
 } to the case in which the cyclotomic integers in the supposed solution are
-pairwise coprime, whereas Hilbert chooses to forgo this reduction. Why?
-As we proceed, we will be examining the differences this makes, and pursuing
-an answer as to why Hilbert might have made this choice.
+pairwise coprime.
+The reduction is not warranted, because the greatest common divisor of the
+three numbers might be a non-principal ideal. In that case, it cannot be
+divided out.
+In an editorial endnote to Kummer's collected works,
+André Weil called this error "an unaccountable lapse." We can take this
+as an encouraging reminder that even the most inventive and insightful
+mathematicians slip up once in a while.
+This hole in the proof is patched in Hilbert's version.
+
 
 ### Kummer
 
@@ -169,4 +178,6 @@ Let's take a look at <chart:w8>[Case 1]{
     "view":"Cr040_08.Pf1"
 }.
 
-"""
+...
+
+@@@

@@ -1,0 +1,157 @@
+# --------------------------------------------------------------------------- #
+# AHOP: an arithmetical house of pancakes                                     #
+# Copyright (c) 2018-2022 Steve Kieffer                                       #
+#                                                                             #
+# This Source Code Form is subject to the terms of the Mozilla Public         #
+# License, v. 2.0. If a copy of the MPL was not distributed with this         #
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.                    #
+# --------------------------------------------------------------------------- #
+
+import gh.alpinemath.histarch.H.ilbert.ZB.Thm119 as Thm119
+
+anno walk @@@
+
+# Thoughts on ZB119
+
+Let's make sure we've got <chart:w1>[the proof]{view:"Thm119.Pf"} open.
+As usual, I recommend starting from
+<chart:w2>[the goal]{view:"Thm119.Thm.A"} and working backwards.
+This lets you quickly see how all the work in the proof finally
+funnels down into
+<chart:w3>[a couple of main points]{view:"Thm119.Pf.{A240,A170}"}.
+Take a few moments and browse around the proof yourself.
+
+...
+
+In <chart:w4>[this cluster]{view:"Thm119.Pf.{A240,A230,A220,A210,I200,A190,A180}"}
+we've <chart:w5>[introduced $e'$]{view:"Thm119.Pf.I200"}
+as the number of ideal primes into which $p$ factors,
+and we're establishing that
+<chart:w6>[$e'$ does indeed equal $e$]{view:"Thm119.Pf.A240"}.
+
+Over in <chart:w7>[this cluster]{view:"Thm119.Pf.{A160,A110,A150,A140,A120,I80,R90,A100,A95,A70,A50,I60}"}
+(which I feel makes the interesting core of the proof)
+we're doing likewise for $f$. We have
+<chart:w8>[introduced $f'$]{view:"Thm119.Pf.I80"} as the degree of an
+arbitrary ideal prime divisor of our rational prime $p$,
+and we're driving toward the conclusion that
+<chart:w9>[$f'$ does indeed equal $f$]{view:"Thm119.Pf.A160"}.
+In this case it's a classic
+<chart:w10>[sandwich tactic]{view:"Thm119.Pf.{A110,A150,A160}"}.
+
+## Sandwich on the degree $f$
+
+...
+
+Immediately after seeing
+<chart:w14>[this congruence]{view:"Thm119.Pf.A50"},
+you're apt to get a sense that one or the other of
+<chart:w11>[the two inequalities]{view:"Thm119.Pf.{A110,A150}"}
+is going to hinge on the usual fact that an equation can't have more
+roots than its degree (provided its coefficients belong to a well-behaved
+number system like a field).
+And indeed, that's the essence of what's going on over in
+<chart:w12>[this half]{view:"Thm119.Pf.{A110,A100,A95,R90}"}.
+
+Meanwhile,
+<chart:w13>[the other half]{view:"Thm119.Pf.{A120,A140,A150,S130}"}
+offers a nice playground in which to watch our triumvirate of
+SOLUTION-DIVISION-CONGRUENCE in action.
+We'll have to move fluidly between these perspectives a couple of times
+as we walk through these steps.
+
+
+
+
+
+<label:w17>[## Why the order of $p$ mod $@ell$ matters]{}
+
+At the outset we may begin by wondering how and why
+<chart:w16>[the multiplicative order of $p$ mod $@ell$]{view:"Thm119.Thm.I2"}
+is going to matter. What does that have to do with anything?
+Why should we be raising $p$ to higher and higher powers, and be concerned
+with the question of when we're going to come back to $1$ mod $@ell$?
+Why should that matter?
+
+Well, when we are working with a primitive $@ell eth$ root of unity $@zeta$,
+then _the power to which $@zeta$ is raised_ should be among our first thoughts
+when we ask for places where residue mod $@ell$ matters. In the expression
+$@zeta^r$ with $@r in bbZ$, it is only the residue of $r$ mod $@ell$ that
+dictates the value of this expression.
+
+So what then about powers of $p$? Well, if we want to see these as the exponent of
+$@zeta$, it sounds like we are talking about the repeated action of raising
+to the $@p eth$ power:
+
+$$@ zeta, zeta sup p;, zeta sup p squ;, zeta sup p cubed; ddd, zeta sup p sup f;; = zeta $$
+
+or
+
+$$@ zeta mapsto zeta sup p; $$
+$$@ zeta sup p; mapsto qnt zeta sup p;; sup p; = zeta sup p squ; $$
+$$@ zeta sup p squ; mapsto qnt zeta sup p squ;; sup p; = zeta sup p cubed; $$
+$$@ ccc $$
+$$@ zeta sup p sup f - 1;; mapsto zeta sup p sup f;; = zeta $$
+$$@ ccc $$
+
+From here, the next leap of creativity evinced in the proof is the decision
+<chart:w15>[to bring in Fermat and Frobenius]{view:"Thm119.Pf.{I10,S20}"}.
+
+**Or perhaps** no such immediate brilliance is required.
+The next gradual step could begin with the mere impulse to generalize:
+"Okay, we have considered $@zeta$; now what about an arbitrary integer $@alp in calO_k$?
+Well, if $@alpuup$ is to be at all interesting,
+we have to give $@alp$ some structure. So let's
+<chart:w18>[represent it over our integral basis]{view:"Thm119.Pf.I10"}:
+
+$$@ alp = a + a1 zeta + ccc + aell-2 zetauuell-2 $$
+
+If we then think about raising the expression on the right to the $@p eth$ power,
+we might anticipate something rather ugly. But if we have learned the impulse
+to weaken by passing to a more forgiving domain, we might ask, "Well what if we're
+willing to work mod $p$?"
+
+And in so asking we would surely already have the Fantastic F's on the periphery
+of our mind: first Frobenius tells us that when working mod $p$ the action of
+raising to the $@p eth$ power is a homomorphism, so that we are free to spread
+that exponent of $p$ around to perch on the shoulder of every member of the
+expression:
+
+$$@ alp^p equiv a^p + a1^p zeta^p + ccc + aell-2^p zeta sup p(ell - 2); mod p$$
+
+And then comes Fermat (namely the "Little Theorem" thereof) to remind us that,
+when working mod $p$, raising any integer to the $p eth@$ power simply brings
+it back around to itself, like <chart:w19>[this]{view:"Thm119.Pf.S20.A1"}:
+
+$$@ alp equiv a^p + a1 zeta^p + ccc + aell-2 zeta sup p(ell - 2); mod p$$
+
+From there, we need only return to the point at which we began: the
+<chart:w20>[_repeated application_]{view:"Thm119.Pf.S20.{R4,A3,A2,A1}"}
+of raising to the $@p eth$ power.
+Now we see that, _as long as we're working mod $p$_,
+<chart:w21>[the result]{view:"Thm119.Pf.S20.R4.{A1,A2}"} for an
+arbitrary integer $@alp in calO_k$ is as nice as that for $@zeta$ itself.
+
+In this way, we've discovered that the multiplicative order of $p$ mod $@ell$
+really is quite relevant in $@bbQ(zeta_ell)$: it describes the period of the
+Frobenius homomorphism on algebraic integers viewed mod $p$.
+
+
+
+
+...
+
+## Historical Notes
+
+The <chart:w22>[use of the letters $e$ and $f$]{view:"Thm119.Thm.{I3,I2}"} in this
+capacity goes back at least to Section VII of Gauss's DA (1801).
+(And it would be hard to imagine it going back much farther than that, because
+who the heck was doing this stuff before Gauss? Well...you never know what you might
+find in Fermat, Euler, Lagrange, Legendre.)
+It has survived as a convention all the way up through Kummer (1847), to
+Hilbert (1897), and onward to today.
+
+
+
+
+@@@

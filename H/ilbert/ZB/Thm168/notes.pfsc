@@ -1,19 +1,19 @@
-###############################################################################
-# This module belongs to Steve Kieffer's *Art History of Proofs* Library.
-# It is licensed under the Creative Commons Attribution-ShareAlike 4.0
-# International License (CC BY-SA 4.0):
-#   https://creativecommons.org/licenses/by-sa/4.0/
-# Attribution may be made through hyperlink to the following URL:
-#   https://github.com/skieffer/ahop
-###############################################################################
+# --------------------------------------------------------------------------- #
+# AHOP: an arithmetical house of pancakes                                     #
+# Copyright (c) 2018-2022 Steve Kieffer                                       #
+#                                                                             #
+# This Source Code Form is subject to the terms of the Mozilla Public         #
+# License, v. 2.0. If a copy of the MPL was not distributed with this         #
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.                    #
+# --------------------------------------------------------------------------- #
 
-from gh.rrmath.lit.H.ilbert.ZB import Thm168
+from gh.alpinemath.histarch.H.ilbert.ZB import Thm168
 
 from ..expand import SuppLem_ZB168_1, SuppPf_01, SuppLem_ZB168_2
 import ..supp_notes as supp_notes
 import gh.skieffer.ahop as ahop
 
-anno Walkthrough """
+anno Walkthrough @@@
 
 # Walkthrough of *Zahlbericht* Theorem 168
 ## The proof of Fermat's Last Theorem for regular primes
@@ -22,11 +22,11 @@ anno Walkthrough """
 
 In Theorem 168, the next-to-last result in the *Zahlbericht*, Hilbert gives
 a modified version of Kummer's proof of Fermat's Last Theorem for regular primes.
-We have <notes:w6>[discussed Kummer's original proof]{
-    "libpath":"ahop.K.ummer.Cr040_08.Commentary"
+We have <link:w6>[discussed Kummer's original proof]{
+    ref:"ahop.K.ummer.Cr040_08.Commentary"
 } elsewhere, and have also
-<notes:w7>[compared Kummer's and Hilbert's versions]{
-    "libpath":"ahop.K.ummer.Cr040_08.H_vs_K_on_FLT"
+<link:w7>[compared Kummer's and Hilbert's versions]{
+    ref:"ahop.K.ummer.Cr040_08.H_vs_K_on_FLT"
 }. Here we give a walkthrough and commentary on Hilbert's version of the proof.
 
 ## Overview
@@ -112,8 +112,8 @@ But we can gain a deeper understanding by proving
     "view": "SuppLem_ZB168_1",
     "group": "extras"
 }.
-We discuss it <notes:w4>[here]{
-    "libpath":"supp_notes.Lem1"
+We discuss it <link:w4>[here]{
+    ref:"supp_notes.Lem1"
 }.
 
 ...
@@ -152,12 +152,18 @@ $5$, none is zero mod $25$.
 The major chunks of this long argument are as follows:
 
 <chart:w19>[Chunk 1:]{
-    "view":"Thm168.Pf1C.{D20,ZBPg369_2,A10}",
+    "view":{
+        "objects": "Thm168.Pf1C.{D20,ZBPg369_2,A10}",
+        "incl_nbhd": false
+    },
     "hovercolor":{":bgY":"Thm168.Pf1C.{D20,ZBPg369_2,A10}"}
 } Assume _wolog_ that the numbers $@alp, bet, gam$ are semiprimary.
 
 <chart:w21>[Chunk 2:]{
-    "view":"Thm168.Pf1C.{A30,I60,D50,D40,E70}",
+    "view":{
+        "objects": "Thm168.Pf1C.{A30,I60,D50,D40,E70}",
+        "incl_nbhd": false
+    },
     "hovercolor":{":bgY":"Thm168.Pf1C.{A30,I60,D50,D40,E70}"}
 } Bring $@gam$ to the RHS of the Fermat equation, and
 factorize the LHS into factors of the form $@alp + zeta^u beta$. Then examine the possible
@@ -269,7 +275,7 @@ Where can we find similar examples of this phenomenon?_
 
 
 
-"""
+@@@
 
 ######################################################################
 # Expansions
@@ -308,7 +314,7 @@ deduc X1 of Thm168.Pf1C.E180 {
         "
     }
 
-    exin E50 {
+    exis E50 {
 
         en = "There are % such that"
 
@@ -324,7 +330,7 @@ deduc X1 of Thm168.Pf1C.E180 {
         }
     }
 
-    wher W60 {
+    with W60 {
 
         asrt A10 {
             sy = "$@alpu = c0 + lam theta$"
@@ -372,3 +378,62 @@ deduc X2 of Thm168.Pf1C.A340 {
     Thm168.Pf1C.A340 by Thm168.Pf1C.D330.A70 and A10.
     "
 }
+
+######################################################################
+# Illustration
+
+anno Illustration @@@
+
+# Illustration of *Zahlbericht* Theorem 168
+
+#### Notes by Steve Kieffer
+
+The proof of Theorem 168 is by contradiction, and as such it is not possible
+to instantiate _all_ the numbers involved simultaneously. However, for most of
+the proof we are looking only at $@alp$ and $@beta$, and numbers derived from
+these, and it is helpful to instantiate some of these constructions.
+
+Let's take $@ell = 7$ and begin by choosing integers $@alp, beta in bbQ(zeta)$
+so as to satisfy the condition of Case 1, i.e. that neither of these numbers is
+divisible by $@frl$. For this it will suffice to choose numbers whose norm is
+not divisible by $7$.
+
+```
+TODO: examplorer
+
+ell = 7
+k = Q(zeta) = ell^th cyclotomic field
+alpha = 1 + 2*zeta
+beta  = 1 + zeta + zeta**3
+Na = norm(alpha)
+Nb = norm(beta)
+
+disp = '$\\alpha = %s$' % latex(alpha)
+disp += '\n$\\beta = %s$' % latex(beta)
+disp += '\n$N(\\alpha) = %s$' % Na
+disp += '\n$N(\\beta) = %s$' % Nb
+print(disp)
+```
+
+@@@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

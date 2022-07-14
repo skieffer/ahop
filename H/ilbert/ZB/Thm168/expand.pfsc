@@ -1,4 +1,11 @@
-
+# --------------------------------------------------------------------------- #
+# AHOP: an arithmetical house of pancakes                                     #
+# Copyright (c) 2018-2022 Steve Kieffer                                       #
+#                                                                             #
+# This Source Code Form is subject to the terms of the Mozilla Public         #
+# License, v. 2.0. If a copy of the MPL was not distributed with this         #
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.                    #
+# --------------------------------------------------------------------------- #
 
 deduc SuppLem_ZB168_1 {
 
@@ -113,7 +120,7 @@ deduc SuppPf_01_c of SuppPf_01.A80 {
         en="$@(x - tau)$ divides $g(x)$ over $@calO[x]$"
     }
     
-    exin E70 {
+    exis E70 {
         
         intr I {
             sy="$@q(x) in calO[x]$"
