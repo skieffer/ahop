@@ -7,7 +7,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.                    #
 # --------------------------------------------------------------------------- #
 
-version = "v0.22.0"
+version = "v0.23.dev"
 
 dependencies = {
     "gh.alpinemath.histarch": "v0.22.0",
